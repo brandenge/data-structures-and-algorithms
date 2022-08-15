@@ -10,9 +10,7 @@ Use `forEach` to loop over the input array and work with each value.  Push the n
 
 const addOne = (arr) => {
   const result = [];
-  arr.forEach(n => {
-    result.push(n + 1);
-  });
+  arr.forEach(n => result.push(n + 1));
   return result;
 };
 
@@ -26,9 +24,7 @@ Use `forEach` to loop over the input array. Modify each string, and add the upda
 
 const addExclamation = (arr) => {
   const result = [];
-  arr.forEach(str => {
-    result.push(`${str}!`);
-  });
+  arr.forEach(str => result.push(`${str}!`));
   return result;
 };
 
@@ -42,9 +38,7 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 
 const allUpperCase = (arr) => {
   const result = [];
-  arr.forEach(str => {
-    result.push(str.toUpperCase());
-  });
+  arr.forEach(str => result.push(str.toUpperCase()));
   return result;
 };
 
@@ -64,9 +58,7 @@ const greeting = (word) => {
 
 const speaker = (words, callback) => {
   const result = [];
-  words.forEach(str => {
-    result.push(callback(str));
-  });
+  words.forEach(str => result.push(callback(str)));
   return result;
 };
 
@@ -138,7 +130,14 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
-  // Solution code here...
+  const result = [];
+  arr.forEach(n => {
+    if (n % 15 === 0) result.push('Fizz Buzz');
+    else if (n % 3 === 0) result.push('Fizz');
+    else if (n % 5 === 0) result.push('Buzz');
+    else result.push(n);
+  });
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -192,7 +191,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   const inputs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
   test('It should print out messages or numbers', () => {
