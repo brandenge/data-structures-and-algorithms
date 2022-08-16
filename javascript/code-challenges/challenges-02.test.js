@@ -50,8 +50,12 @@ CHALLENGE 5
 Write a function named forEachTwoToThe that produces the same output as your forLoopTwoToThe function from challenge 4, but uses forEach instead of a for loop.
 ------------------------------------------------------------------------------------------------ */
 
-const forEachTwoToThe = (arr) => {
-  // Solution code here...
+const forEachTwoToThe = arr => {
+  const result = [];
+  arr.forEach(n => {
+    result.push(2 ** n);
+  });
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
