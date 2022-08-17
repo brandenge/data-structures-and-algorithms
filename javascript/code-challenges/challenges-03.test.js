@@ -156,9 +156,7 @@ const characters = [
   },
 ];
 
-const getCharactersWithoutChildren = (arr) => {
-  // Solution code here...
-};
+const getCharactersWithoutChildren = (arr) => arr.filter(character => character.children === undefined);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
