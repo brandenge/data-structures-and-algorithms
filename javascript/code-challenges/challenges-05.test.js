@@ -175,7 +175,12 @@ Write a function that, given an array of numbers as input, uses reduce to calcul
 Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
-const calculateAverage = (arr) => arr.reduce((sum, n) => sum + n, 0) / arr.length;
+const calculateAverage = (arr) => {
+  const result = arr.reduce((acc, n) => {
+    return {count: acc.count + 1, sum: acc.sum + n};
+  }, {count: 0, sum: 0});
+  return result.sum / result.count;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
