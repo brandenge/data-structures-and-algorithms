@@ -163,9 +163,9 @@ const characters = [
   },
 ];
 
-const countNumberOfChildren = (arr) => {
-  // Solution code here...
-};
+const countNumberOfChildren = (arr) => arr.reduce((count, character) => {
+  return count + (character.children ? character.children.length : 0);
+}, 0);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
@@ -175,9 +175,7 @@ Write a function that, given an array of numbers as input, uses reduce to calcul
 Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
-const calculateAverage = (arr) => {
-  // Solution code here...
-};
+const calculateAverage = (arr) => arr.reduce((sum, n) => sum + n, 0) / arr.length;
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
