@@ -199,9 +199,7 @@ const isPrime = (value) => {
   return value > 1;
 };
 
-const countPrimeNumbers = (arr) => {
-  // Solution code here...
-};
+const countPrimeNumbers = (arr) => arr.reduce((count, n) => count + (isPrime(n) ? 1 : 0), 0);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
@@ -242,9 +240,10 @@ const snorlaxData = {
   weight: 4600,
 };
 
-const extractStat = (statName, arr) => {
-  // Solution code here...
-};
+const extractStat = (statName, arr) => arr.reduce((match, stat) => {
+  if (match) return match;
+  if (stat.stat.name === statName) return stat;
+}, null);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 11 - Stretch Goal
