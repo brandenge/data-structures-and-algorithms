@@ -102,7 +102,7 @@ let starWarsData = [{
   gender: 'female'
 }];
 
-const returnNames = (arr) => arr.reduce((names, character) => names.concat([character.name]), []);
+const returnNames = (arr) => arr.reduce((names, character) => [...names, character.name], []);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -256,7 +256,11 @@ Write a function named extractChildren that, given the array of characters from 
 ------------------------------------------------------------------------------------------------ */
 
 const extractChildren = (arr) => {
-  // Solution code here...
+  const namesWithA = arr.filter(char => char.name.includes('a'));
+  return namesWithA.reduce((children, char) => {
+    if (char.children) return [...children, ...char.children];
+    else return children;
+  }, []);
 };
 
 /* ------------------------------------------------------------------------------------------------
