@@ -45,9 +45,7 @@ Write a function called sortNumbers that takes an array of numbers and sorts the
 HINT: Beware... JS default is "Lexical" ordering.
 ------------------------------------------------------------------------------------------------ */
 
-const sortNumbers = (arr) => {
-  // Solution code here...
-};
+const sortNumbers = (arr) => arr.sort((a, b) => a - b);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
