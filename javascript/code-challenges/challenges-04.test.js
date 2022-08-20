@@ -206,7 +206,20 @@ You DO NOT need to use your solution to Challenge 12 in completing Challenge 13.
 ------------------------------------------------------------------------------------------------ */
 
 const sortSchedule = (arr) => {
-
+  const workDays = {
+    Monday: 0,
+    Tuesday: 1,
+    Wednesday: 2,
+    Thursday: 3,
+    Friday: 4
+  };
+  return arr.sort((a, b) => {
+    if (workDays[a.dayOfWeek] < workDays[b.dayOfWeek]) return -1;
+    else if (workDays[a.dayOfWeek] > workDays[b.dayOfWeek]) return 1;
+    else if (+a.end - +a.start < +b.end - +b.start) return -1;
+    else if (+a.end - +a.start > +b.end - +b.start) return 1;
+    else return 0;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
