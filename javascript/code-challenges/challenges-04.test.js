@@ -185,7 +185,14 @@ const meetings = [
 ];
 
 const sortMeetingsByDay = (arr) => {
-
+  const workDays = {
+    Monday: 0,
+    Tuesday: 1,
+    Wednesday: 2,
+    Thursday: 3,
+    Friday: 4
+  };
+  return arr.sort((a, b) => workDays[a.dayOfWeek] - workDays[b.dayOfWeek]);
 };
 
 /* ------------------------------------------------------------------------------------------------
