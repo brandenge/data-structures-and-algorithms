@@ -114,9 +114,7 @@ Write a function named sortNumbersByLength that takes in an array of numbers and
 For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 ------------------------------------------------------------------------------------------------ */
 
-const sortNumbersByLength = (arr) => {
-
-};
+const sortNumbersByLength = (arr) => arr.sort((a, b) => a.toString().length - b.toString().length);
 
 /*-----------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
