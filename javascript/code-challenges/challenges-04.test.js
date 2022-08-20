@@ -134,9 +134,11 @@ const people = [
   new Person('Stan', 'Seattle', 67),
 ];
 
-const sortPeople = (arr) => {
-
-};
+const sortPeople = (arr) => arr.sort((a, b) => {
+  if (a.lastName.toLowerCase() < b.lastName.toLowerCase()) return -1;
+  else if (a.lastName.toLowerCase() > b.lastName.toLowerCase()) return 1;
+  else return 0;
+});
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 11 - Stretch Goal
