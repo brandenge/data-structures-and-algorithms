@@ -118,7 +118,6 @@ const gruffaloCrumble = {
   ],
 };
 
-
 const listFoods = (recipe) => {
   const result = recipe.ingredients.map(item => {
     const firstSpaceIndex = item.indexOf(' ');
