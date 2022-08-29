@@ -65,13 +65,11 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
-  const result = [];
-  for (let i = 0, len = firstPike.length; i < len; ++i) {
+  return firstPike.map((cookies, i) => {
     let sum = 0;
-    stores.forEach(store => sum += store[i]);
-    result.push(sum);
-  }
-  return result;
+    stores.forEach((store) => sum += store[i]);
+    return sum;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -84,11 +82,7 @@ Here is sample data for the 9:00 sales: { sales: '88 cookies', time: '9 a.m.' }.
 Write a function named salesData that uses forEach to iterate over the hourlySales array and create an object for each hour. Return an array of the formatted data.
 ------------------------------------------------------------------------------------------------ */
 
-const salesData = (hours, data) => {
-  const result = [];
-  data.forEach((_, i) => result.push({sales: `${data[i]} cookies`, time: hours[i]}));
-  return result;
-};
+const salesData = (hours, data) => data.map((cookies, i) => ({ sales: `${cookies} cookies`, time: hours[i] }));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
