@@ -86,4 +86,5 @@ Note that when you check your code into GitHub, all of your tests will automatic
 
 ## Code Challenges / Whiteboards Table of Contents
 
-- 1 - [Array Reverse](./array-reverse/README.md)
+1) [Array Reverse](./array-reverse/README.md)
+2) [Array Insert Shift](./array-insert-shift/README.md)
