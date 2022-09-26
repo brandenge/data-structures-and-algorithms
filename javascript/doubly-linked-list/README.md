@@ -1,11 +1,11 @@
-# Singly Linked List
+# Doubly Linked List
 
-This is an implementation of a linked list data structure and some basic methods with it.
+This is an implementation of a doubly linked list data structure and some basic methods with it.
 
 ## Challenge
 
-- Create a Node class with `value` and `next` properties.
-- Create a LinkedList class with a `head` property, and `insert`, `includes`, and `toString` methods.
+- Create a Node class with `value`, `next`, and `prev` properties.
+- Create a DoublyLinkedList class with a `head` property, and `insert`, `includes`, and `toString` methods.
 - Create tests for all classes and methods.
 
 ## Approach & Efficiency
@@ -37,6 +37,7 @@ insert:
 - Returns: undefined.
 - Creates a new node.
 - Prepends the new node to the beginning (at the head) of the list with O(1) Time performance.
+- Updates the old head's prev property to point to the new node (which is the new head).
 - Updates the list's head property to point to the newly inserted node.
 
 includes:
@@ -51,5 +52,5 @@ includes:
 toString:
 
 - Arguments: none. Takes no arguments.
-- Returns a formatted string in the format of `"{ a } -> { b } -> { c } -> NULL"`, where `a`, `b`, and `c` are the values of each node in the linked list.
+- Returns a formatted string in the format of `"NULL <- { a } ->  <- { b } ->  <- { c } -> NULL"`, where `a`, `b`, and `c` are the values of each node in the doubly linked list.
 - Traverses the linked list and appends each node's value to a formatted string.
