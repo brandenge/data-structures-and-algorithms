@@ -91,3 +91,4 @@ Note that when you check your code into GitHub, all of your tests will automatic
 3) [Array Binary Search](./array-binary-search/README.md)
 4) [Linked List](./linked-list/README.md)
 5) [Doubly Linked List](./doubly-linked-list/README.md)
+6) [Linked List Insertions](./linked-list-insertions/README.md)
