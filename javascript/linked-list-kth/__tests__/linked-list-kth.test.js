@@ -205,4 +205,65 @@ describe('Linked List', () => {
     expect(linkedList.tail.value).toEqual(3);
     expect(linkedList.tail.next).toEqual(null);
   });
+
+  it('Can find the k-th node from the end of the list when k is a valid positive integer', () => {
+    const linkedList = new LinkedList();
+    linkedList.insert(5);
+    linkedList.insert(4);
+    linkedList.insert(3);
+    linkedList.insert(2);
+    linkedList.insert(1);
+    expect(linkedList.kthFromEnd(0)).toEqual(5);
+    expect(linkedList.kthFromEnd(1)).toEqual(4);
+    expect(linkedList.kthFromEnd(2)).toEqual(3);
+    expect(linkedList.kthFromEnd(3)).toEqual(2);
+    expect(linkedList.kthFromEnd(4)).toEqual(1);
+  });
+
+  it('Throws an error when the k-th node is invalid', () => {
+    const linkedList = new LinkedList();
+    linkedList.insert(3);
+    linkedList.insert(2);
+    linkedList.insert(1);
+    let k = -1;
+    expect(() => linkedList.kthFromEnd(k)).toThrow(`Error in kthFromEnd() - the argument of ${k} must be a positive integer that is less than the total number of nodes in the linked list, which has a current count of: ${linkedList.count}`);
+    k = 4;
+    expect(() => linkedList.kthFromEnd(k)).toThrow(`Error in kthFromEnd() - the argument of ${k} must be a positive integer that is less than the total number of nodes in the linked list, which has a current count of: ${linkedList.count}`);
+    k = linkedList.count;
+    expect(() => linkedList.kthFromEnd(k)).toThrow(`Error in kthFromEnd() - the argument of ${k} must be a positive integer that is less than the total number of nodes in the linked list, which has a current count of: ${linkedList.count}`);
+  });
+
+  it('Can find the value of the middle node of a linked list', () => {
+    const linkedList = new LinkedList();
+    linkedList.insert(3);
+    expect(linkedList.getMiddleNodeValue()).toEqual(3);
+    linkedList.insert(2);
+    expect(linkedList.getMiddleNodeValue()).toEqual(2);
+    linkedList.insert(1);
+    expect(linkedList.getMiddleNodeValue()).toEqual(2);
+    linkedList.insert(0);
+    expect(linkedList.getMiddleNodeValue()).toEqual(1);
+    linkedList.insert(-1);
+    expect(linkedList.getMiddleNodeValue()).toEqual(1);
+  });
+
+  it('Throws an error when the linked list is empty while it is searching for the middle node', () => {
+    const linkedList = new LinkedList();
+    expect(() => linkedList.getMiddleNodeValue()).toThrow('Error in getMiddleNodeValue() - the linked list is empty');
+  });
+
+  it('Can accurately keep count of the number of nodes ', () => {
+    const linkedList = new LinkedList();
+    expect(linkedList.count).toEqual(0);
+    linkedList.insert(1);
+    expect(linkedList.count).toEqual(1);
+    linkedList.append(2);
+    expect(linkedList.count).toEqual(2);
+    linkedList.insertBefore(2, 3);
+    expect(linkedList.count).toEqual(3);
+    linkedList.insertAfter(3, 4);
+    expect(linkedList.count).toEqual(4);
+    linkedList.delete(1);
+    expect(linkedList.count).toEqual(3);
+  });
 });

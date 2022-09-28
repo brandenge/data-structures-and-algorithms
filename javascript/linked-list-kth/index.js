@@ -135,15 +135,18 @@ class LinkedList {
       throw new Error(`Error in kthFromEnd() - the argument of ${k} must be a positive integer that is less than the total number of nodes in the linked list, which has a current count of: ${this.count}`);
     }
     let currentNode = this.head;
-    for (let i = 0, count = this.count - k; i < count; i++) {
+    for (let i = 1, count = this.count - k; i < count; i++) {
       currentNode = currentNode.next;
     }
     return currentNode.value;
   }
 
-  getMiddleNode() {
+  getMiddleNodeValue() {
+    if (this.head === null) {
+      throw new Error('Error in getMiddleNodeValue() - the linked list is empty');
+    }
     let currentNode = this.head;
-    for (let i = 0, count = Math.floor(this.count / 2); i < count; i++) {
+    for (let i = 1, count = Math.ceil(this.count / 2); i < count; i++) {
       currentNode = currentNode.next;
     }
     return currentNode.value;
