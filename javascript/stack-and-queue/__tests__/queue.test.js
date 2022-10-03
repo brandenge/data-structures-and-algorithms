@@ -18,10 +18,10 @@ describe('Tests the Queue data structure', () => {
     queue.enqueue(2);
     queue.enqueue(3);
     expect(queue.front.value).toEqual(1);
-    expect(queue.front.next).toEqual(null);
+    expect(queue.front.next.value).toEqual(2);
+    expect(queue.front.next.next.value).toEqual(3);
     expect(queue.back.value).toEqual(3);
-    expect(queue.back.next.value).toEqual(2);
-    expect(queue.back.next.next.value).toEqual(1);
+    expect(queue.back.next).toEqual(null);
   });
 
   it('Can successfully dequeue out of a queue the expected value', () => {
