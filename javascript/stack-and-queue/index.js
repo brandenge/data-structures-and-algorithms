@@ -42,7 +42,9 @@ class Queue {
 
   enqueue(value) {
     const node = new Node(value);
-    node.next = this.back;
+    if (!this.back) this.back = node;
+    if (!this.front) this.front = node;
+    this.back.next = node;
     this.back = node;
   }
 

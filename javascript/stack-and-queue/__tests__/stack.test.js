@@ -27,7 +27,7 @@ describe('Tests the Stack data structure', () => {
     stack.pop();
     expect(stack.top.value).toEqual(2);
     expect(stack.top.next.value).toEqual(3);
-    expect(stack.top.next.next.value).toEqual(null);
+    expect(stack.top.next.next).toEqual(null);
   });
 
   it('Can successfully empty a stack after multiple pops', () => {
@@ -50,17 +50,17 @@ describe('Tests the Stack data structure', () => {
     expect(stack.top.value).toEqual(1);
     expect(stack.top.next.value).toEqual(2);
     expect(stack.top.next.next.value).toEqual(3);
-    expect(stack.top.next.next.next.value).toEqual(null);
+    expect(stack.top.next.next.next).toEqual(null);
   });
 
   it('Can successfully instantiate an empty stack', () => {
     const stack = new Stack();
-    expect(stack.top.value).toEqual(null);
+    expect(stack.top).toEqual(null);
   });
 
   it('Calling pop or peek on empty stack raises exception', () => {
     const stack = new Stack();
-    expect(stack.peek()).toThrow('The stack is empty');
-    expect(stack.pop()).toThrow('The stack is empty');
+    expect(() => stack.peek()).toThrow('The stack is empty');
+    expect(() => stack.pop()).toThrow('The stack is empty');
   });
 });
