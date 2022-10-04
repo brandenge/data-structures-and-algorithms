@@ -94,3 +94,4 @@ Note that when you check your code into GitHub, all of your tests will automatic
 6) [Linked List Insertions](./linked-list-insertions/README.md)
 7) [Linked List Kth](./linked-list-kth/README.md)
 8) [Linked List Zip](./linked-list-zip/README.md)
+8) [Stack Queue Pseudo](./stack-queue-pseudo/README.md)
