@@ -2,6 +2,8 @@
 
 Implement a Queue using two Stacks.
 
+[Link to Code](./index.js)
+
 ## Challenge
 
 - Create a `Node` class with `value` and `next` properties.
