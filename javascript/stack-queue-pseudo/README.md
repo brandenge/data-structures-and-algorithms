@@ -38,4 +38,4 @@ dequeue
 
 ## Whiteboard
 
-[Pseudo Queue Whiteboard](pseudoQueue.png)
+[Pseudo Queue Whiteboard](stack-queue-pseudo.png)
