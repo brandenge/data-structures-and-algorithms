@@ -2,6 +2,8 @@
 
 Implement a queue that can handle 2 different types of objects called `cats` and `dogs` and is able to dequeue either type of object by preference, selecting the oldest one by type, or regardless of type.
 
+[Link to Code](./index.js)
+
 ## Challenge
 
 - Create a `Node` class with `value` and `next` properties.
