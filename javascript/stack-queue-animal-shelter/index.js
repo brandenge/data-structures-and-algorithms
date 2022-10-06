@@ -1,3 +1,5 @@
+'use strict';
+
 class Animal {
   constructor(value) {
     this.type = value;
