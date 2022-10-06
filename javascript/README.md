@@ -96,3 +96,4 @@ Note that when you check your code into GitHub, all of your tests will automatic
 8) [Linked List Zip](./linked-list-zip/README.md)
 9) [Stack Queue Pseudo](./stack-queue-pseudo/README.md)
 10) [Stack Queue Animal Shelter](./stack-queue-animal-shelter/README.md)
+11) [Stack Queue Brackets](./stack-queue-brackets/README.md)
