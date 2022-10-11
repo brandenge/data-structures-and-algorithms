@@ -98,3 +98,4 @@ Note that when you check your code into GitHub, all of your tests will automatic
 10) [Stack Queue Animal Shelter](./stack-queue-animal-shelter/README.md)
 11) [Stack Queue Brackets](./stack-queue-brackets/README.md)
 12) [Binary Tree and BST](binary-tree-and-bst/README.md)
+13) [Tree Max](tree-max/README.md)
