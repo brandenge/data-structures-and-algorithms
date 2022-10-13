@@ -16,15 +16,18 @@ class Queue {
   enqueue(value) {
     const node = new Node(value);
     if (!this.back) this.back = node;
+    else {
+      this.back.next = node;
+      this.back = node;
+    }
     if (!this.front) this.front = node;
-    this.back.next = node;
-    this.back = node;
   }
 
   dequeue() {
-    if (!this.front) throw new Error('The queue is empty');
+    if (this.front === null) throw new Error('The queue is empty');
     const temp = this.front;
     this.front = this.front.next;
+    if (this.front === null) this.back = null;
     temp.next = null;
     return temp.value;
   }
@@ -35,7 +38,7 @@ class Queue {
   }
 
   isEmpty() {
-    return !this.front;
+    return this.front === null;
   }
 }
 
