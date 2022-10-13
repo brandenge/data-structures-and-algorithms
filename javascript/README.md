@@ -99,3 +99,5 @@ Note that when you check your code into GitHub, all of your tests will automatic
 11) [Stack Queue Brackets](./stack-queue-brackets/README.md)
 12) [Binary Tree and BST](binary-tree-and-bst/README.md)
 13) [Tree Max](tree-max/README.md)
+14) [Breadth-first Traversal](breadth-first-traversal/README.md)
+15) [Tree Fizz Buzz](tree-fizz-buzz/README.md)
