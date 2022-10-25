@@ -1,3 +1,5 @@
+'use strict';
+
 function insertionSort(arr) {
   for (let i = 1, len = arr.length; i < len; i++) {
     let j = i - 1;
@@ -9,3 +11,5 @@ function insertionSort(arr) {
     arr[j + 1] = temp;
   }
 }
+
+module.exports = insertionSort;
