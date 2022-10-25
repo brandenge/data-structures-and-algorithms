@@ -101,3 +101,4 @@ Note that when you check your code into GitHub, all of your tests will automatic
 13) [Tree Max](tree-max/README.md)
 14) [Breadth-first Traversal](breadth-first-traversal/README.md)
 15) [Tree Fizz Buzz](tree-fizz-buzz/README.md)
+16) [Insertion Sort](insertion-sort/README.md)
