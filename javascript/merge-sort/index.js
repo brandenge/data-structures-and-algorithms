@@ -34,7 +34,7 @@ function merge(left, right, arr) {
     k++;
   }
   while (j < rightLen) {
-    arr[k] = right[i];
+    arr[k] = right[j];
     j++;
     k++;
   }
