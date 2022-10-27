@@ -103,3 +103,4 @@ Note that when you check your code into GitHub, all of your tests will automatic
 15) [Tree Fizz Buzz](tree-fizz-buzz/README.md)
 16) [Insertion Sort](insertion-sort/README.md)
 17) [Merge Sort](merge-sort/README.md)
+18) [Sort and Filter Movies](sort-and-filter-movies/README.md)
