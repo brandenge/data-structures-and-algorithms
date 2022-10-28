@@ -50,7 +50,7 @@ The merge sort algorithm uses the "divide and conquer" approach to solving the p
 
 The algorithm then enters a 2nd phase after the recursive calls where it begins to merge the halves of the arrays back together into a new array in sorted order as the recursive calls unwind, resulting in a final sorted array at the end when the recursive calls have fully unwound.
 
-[Whiteboard Trace](code-challenge-27.png)
+![Whiteboard Trace](code-challenge-27.png)
 
 Below is a description of each step from the above diagram (the green numbers in the diagram)
 

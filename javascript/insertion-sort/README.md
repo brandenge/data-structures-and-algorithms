@@ -30,7 +30,7 @@ The general idea of the algorithm is that we separate the array into a sorted se
 
 Upon each iteration, the current index/value being checked is compared to the previous index to determine if it is sorted or not. If it is sorted, then the value stays in place, and the next iteration in the for loop proceeds. If it is not sorted, then the previous value is moved forward an index, and the next prior value is also checked to compare against the current value (which is saved in the temp variable). This process continues within a while loop until either a comparison is made that identifies the correct index for the current value to be inserted into, or the beginning of the array is reached (in which case, the current value gets insert into index 0).
 
-[Whiteboard Trace](code-challenge-26.png)
+![Whiteboard Trace](code-challenge-26.png)
 
 ### Iteration/Pass 1
 
