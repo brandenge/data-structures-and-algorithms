@@ -5,31 +5,53 @@ const LinkedList = require('../linked-list-kth/index');
 class HashTable {
   constructor(size) {
     this.size = size;
-    this.table = [];
+    this.table = new Array(size);
   }
 
   set(key, value) {
-    const index = this.hash(key);
-    if (this.table[index] === null) {
-      const newBucket = new LinkedList();
-      newBucket.head = { key: value };
-      this.table[index] = newBucket;
+    let bucket = this.table[this.hash(key)];
+    if (bucket === undefined) {
+      bucket = new LinkedList();
+      this.table[this.hash(key)] = bucket;
     }
+    bucket.insert({ [key]: value });
   }
 
   get(key) {
-
+    const bucket = this.table[this.hash(key)];
+    if (bucket) {
+      let current = bucket.head;
+      while (current) {
+        const value = current.value[key];
+        if (value !== undefined) return value;
+        else current = current.next;
+      }
+    }
+    return null;
   }
 
   has(key) {
-
+    return this.keys().has(key);
   }
 
   keys() {
-
+    const keys = new Set();
+    this.table.forEach((bucket) => {
+      if (bucket) {
+        let current = bucket.head;
+        while (current) {
+          keys.add(Object.keys(current.value)[0]);
+          current = current.next;
+        }
+      }
+    });
+    return keys;
   }
 
   hash(str) {
-    str.split('').map((char, i) => char )
+    const asciiSum = str.split('').reduce((sum, char) => sum + char.charCodeAt(0), 0);
+    return asciiSum * str.length * 2027 % this.size;
   }
 }
+
+module.exports = HashTable;
