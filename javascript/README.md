@@ -104,3 +104,5 @@ Note that when you check your code into GitHub, all of your tests will automatic
 16) [Insertion Sort](insertion-sort/README.md)
 17) [Merge Sort](merge-sort/README.md)
 18) [Sort and Filter Movies](sort-and-filter-movies/README.md)
+19) [Hash Table](hash-table/README.md)
+20) [Hash Map Repeated Word](hashmap-repeated-word/README.md)
