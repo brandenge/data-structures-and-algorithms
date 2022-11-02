@@ -1,4 +1,4 @@
-# Hashtables
+# Hashmap Repeated Word
 
 This is an implementation of a function that finds the first repeated word in a string.
 
