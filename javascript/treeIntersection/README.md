@@ -2,6 +2,8 @@
 
 This is an implementation of a function that finds the shared common values (i.e. an intersection) of two binary trees.
 
+[Link to Code](./tree-intersection.js)
+
 ## Challenge
 
 Write a function called treeIntersection that takes two binary trees as parameters. Using your Hashmap implementation as a part of your algorithm, return a set of values found in both trees.
