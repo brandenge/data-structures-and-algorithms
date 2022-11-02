@@ -49,8 +49,8 @@ class HashTable {
   }
 
   hash(str) {
-    const asciiSum = str.split('').reduce((sum, char) => sum + char.charCodeAt(0), 0);
-    return asciiSum * str.length * 2027 % this.size;
+    const asciiSum = str.split('').reduce((sum, char) => sum + (Math.pow(char.charCodeAt(0), 2)), 0);
+    return asciiSum * str.length * 86743 % this.size;
   }
 }
 
