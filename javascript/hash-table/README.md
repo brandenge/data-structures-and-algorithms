@@ -2,6 +2,8 @@
 
 This is an implementation of a hash table with collision resolution (via separate chaining, aka open hashing, using linked lists).
 
+[Link to Code](./index.js)
+
 ## Challenge
 
 Implement a Hashtable Class with the following methods: set, get, has, keys, and hash.
