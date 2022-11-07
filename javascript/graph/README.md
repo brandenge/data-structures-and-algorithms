@@ -2,6 +2,8 @@
 
 This is an implementation of a graph data structure.
 
+[Link to Code](index.js)
+
 ## Challenge
 
 Implement your own Graph. The graph should be represented as an adjacency list, and should include methods for the following actions:
