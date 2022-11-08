@@ -83,6 +83,10 @@ class Graph {
     }
     return [...visited];
   }
+
+  areConnected(node1, node2) {
+    return this.breadthFirstTraversal(node1).includes(node2);
+  }
 }
 
 module.exports = Graph;
