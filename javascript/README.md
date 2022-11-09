@@ -110,3 +110,4 @@ Note that when you check your code into GitHub, all of your tests will automatic
 22) [Hash Map Left Join](hashmap-left-join/README.md)
 23) [Graph](graph/README.md)
 24) [Graph Breadth First Traversal](graph-breadth-first/README.md)
+25) [Graph Business Trip](graph-business-trip/README.md)
