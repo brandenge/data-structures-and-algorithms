@@ -72,11 +72,11 @@ class Graph {
 
     while (stack.length) {
       current = stack.pop();
+      visited.add(current);
       if (callback) callback(current.value);
       const neighbors = this.getNeighbors(current);
       for (let edge of neighbors) {
         if (!visited.has(edge.node)) {
-          visited.add(edge.node);
           stack.push(edge.node);
         }
       }
@@ -85,7 +85,7 @@ class Graph {
   }
 
   areConnected(node1, node2) {
-    return this.breadthFirstTraversal(node1).includes(node2);
+    return this.depthFirstTraversal(node1).includes(node2);
   }
 }
 

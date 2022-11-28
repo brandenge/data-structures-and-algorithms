@@ -17,7 +17,7 @@ Write the following method for the Graph class:
 
 breadthFirstTraversal
 
-- Time Complexity: Quadratic O(n^2)
+- Time Complexity: Linear "O(V + E), where V is the number of vertices and E is the number of edges in the graph."
 - Space Complexity: Linear O(n)
 
 ## Solution / Whiteboard
@@ -27,3 +27,4 @@ breadthFirstTraversal
 Credits:
 
 - [Code Fellows Demo Code](https://github.com/codefellows/seattle-code-javascript-401d48/blob/main/class-35/inclass-demo/index.js)
+- [Geeks for Geeks](https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/)

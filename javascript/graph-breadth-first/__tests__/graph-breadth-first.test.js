@@ -50,7 +50,7 @@ describe('Tests for the breadthFirstTraversal method for the Graph class', () =>
     expect(consoleSpy).toHaveBeenCalledWith('Narnia');
     expect(consoleSpy).toHaveBeenCalledWith('Naboo');
 
-    console.log.mockRestore();
+    consoleSpy.mockRestore();
   });
 });
 
