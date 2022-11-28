@@ -27,7 +27,7 @@ class Graph {
   addEdge(startNode, endNode, weight = 0) {
     const neighbors = this.adjacencyList.get(startNode);
     const edge = new Edge(endNode, weight);
-    neighbors.push(edge);
+    neighbors.unshift(edge);
     return edge;
   }
 
@@ -41,26 +41,6 @@ class Graph {
 
   size() {
     return this.adjacencyList.size;
-  }
-
-  breadthFirstTraversal(root, callback) {
-    if (!root) return [];
-    const queue = [root];
-    const visited = new Set();
-    visited.add(root);
-    let current;
-    while (queue.length) {
-      current = queue.pop();
-      if (callback) callback(current.value);
-      const neighbors = this.getNeighbors(current);
-      for (let edge of neighbors) {
-        if (!visited.has(edge.node)) {
-          visited.add(edge.node);
-          queue.unshift(edge.node);
-        }
-      }
-    }
-    return [...visited];
   }
 
   depthFirstTraversal(root, callback) {
@@ -81,11 +61,8 @@ class Graph {
         }
       }
     }
+    console.log([...visited]);
     return [...visited];
-  }
-
-  areConnected(node1, node2) {
-    return this.depthFirstTraversal(node1).includes(node2);
   }
 }
 
