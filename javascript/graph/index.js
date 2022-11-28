@@ -44,10 +44,12 @@ class Graph {
   }
 
   breadthFirstTraversal(root, callback) {
+    if (!root) return [];
     const queue = [root];
     const visited = new Set();
     visited.add(root);
     let current;
+
     while (queue.length) {
       current = queue.pop();
       if (callback) callback(current.value);
@@ -63,6 +65,7 @@ class Graph {
   }
 
   depthFirstTraversal(root, callback) {
+    if (!root) return [];
     const stack = [root];
     const visited = new Set();
     visited.add(root);
