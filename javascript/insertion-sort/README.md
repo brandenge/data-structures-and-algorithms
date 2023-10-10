@@ -22,8 +22,6 @@ This is an implementation of a function that performs an insertion sort operatio
       arr[j + 1] <-- temp
 ```
 
-Pseudocode Source: Code Fellows
-
 ## Trace
 
 The general idea of the algorithm is that we separate the array into a sorted section and an unsorted section. The current element being evaluated is in the middle between the two sections, and starts from the left, moving to the right by 1 for each iterations. Therefore, the sorted section grows by 1 and and the unsorted section shrinks by 1 until the entire array has been iterated through and thus completing the sorting. The current value being checked is saved into a temp variable in anticipation of it being "inserted" (hence the name insertion sort) at the correct index.

@@ -1,6 +1,6 @@
 'use strict';
 
-const LinkedList = require('../../linked-list-kth');
+const LinkedList = require('../../singly-linked-list/index');
 const { zipLists } = require('../index');
 
 describe('Tests for zipList function', () => {

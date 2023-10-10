@@ -32,7 +32,3 @@ Example:
 [Link to Code](index.js)
 
 Run the test file with the command: `npm test __tests__/graph-business-trip.test.js` from the `graph-business-trip` directory.
-
-Credits:
-
-- Code Fellows for example diagram, and sample inputs, and outputs.

@@ -47,16 +47,15 @@ class Graph {
     if (!root) return [];
     const queue = [root];
     const visited = new Set();
-    visited.add(root);
     let current;
 
     while (queue.length) {
       current = queue.pop();
+      visited.add(current);
       if (callback) callback(current.value);
       const neighbors = this.getNeighbors(current);
       for (let edge of neighbors) {
         if (!visited.has(edge.node)) {
-          visited.add(edge.node);
           queue.unshift(edge.node);
         }
       }
@@ -68,21 +67,24 @@ class Graph {
     if (!root) return [];
     const stack = [root];
     const visited = new Set();
-    visited.add(root);
     let current;
 
     while (stack.length) {
       current = stack.pop();
+      visited.add(current);
       if (callback) callback(current.value);
       const neighbors = this.getNeighbors(current);
       for (let edge of neighbors) {
         if (!visited.has(edge.node)) {
-          visited.add(edge.node);
           stack.push(edge.node);
         }
       }
     }
     return [...visited];
+  }
+
+  areConnected(node1, node2) {
+    return this.depthFirstTraversal(node1).includes(node2);
   }
 }
 

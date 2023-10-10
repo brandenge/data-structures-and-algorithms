@@ -45,7 +45,7 @@ describe('Tests for the depthFirstTraversal method for the Graph class', () => {
     smallGraph.addEdge(A, B);
     smallGraph.addEdge(A, C);
 
-    expect(smallGraph.depthFirstTraversal(A)).toEqual([A, B, C]);
+    expect(smallGraph.depthFirstTraversal(A)).toEqual([A, C, B]);
   });
 
   it('Returns the correct array of nodes in the proper order for a small graph', () => {
@@ -59,7 +59,7 @@ describe('Tests for the depthFirstTraversal method for the Graph class', () => {
     smallGraph.addEdge(A, C);
     smallGraph.addEdge(B, D);
 
-    expect(smallGraph.depthFirstTraversal(A, console.log)).toEqual([A, B, D, C]);
+    expect(smallGraph.depthFirstTraversal(A, console.log)).toEqual([A, C, B, D]);
   });
 
   it('Returns the correct array of nodes in the proper order for a small cyclical graph', () => {
@@ -75,11 +75,11 @@ describe('Tests for the depthFirstTraversal method for the Graph class', () => {
     smallGraph.addEdge(B, D);
     smallGraph.addEdge(D, A);
 
-    expect(smallGraph.depthFirstTraversal(A)).toEqual([A, B, D, C]);
+    expect(smallGraph.depthFirstTraversal(A)).toEqual([A, C, B, D]);
   });
 
   it('Returns the correct array of nodes in the proper order for a large cyclical graph', () => {
-    expect(graph.depthFirstTraversal(A)).toEqual([A, B, C, G, D, E, F, H]);
+    expect(graph.depthFirstTraversal(A)).toEqual([A, D, H, F, E, B, C, G]);
   });
 
   it('Calls the callback on each node', () => {

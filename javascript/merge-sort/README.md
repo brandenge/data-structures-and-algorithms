@@ -42,8 +42,6 @@ ALGORITHM Merge(left, right, arr)
        set remaining entries in arr to remaining values in left
 ```
 
-Pseudocode Source: Code Fellows
-
 ## Trace
 
 The merge sort algorithm uses the "divide and conquer" approach to solving the problem of sorting an array. It does this by recursively splitting the array into 2 halves until it reaches a base of an array with either 0 or 1 element remaining in the array. An array with 0 or 1 element in it is already sorted.

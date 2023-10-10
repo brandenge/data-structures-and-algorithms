@@ -97,7 +97,3 @@ size
 - Arguments: none
 - Returns the total number of nodes in the graph
 - 0 if there are none
-
-Credits:
-
-- [Code Fellows Demo Code](https://github.com/codefellows/seattle-code-javascript-401d48/blob/main/class-35/inclass-demo/index.js)
