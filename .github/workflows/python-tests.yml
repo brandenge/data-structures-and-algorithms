@@ -3,13 +3,9 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'python/**'
   pull_request:
     branches:
       - main
-    paths:
-      - 'python/**'
 
 jobs:
   build:
@@ -17,9 +13,9 @@ jobs:
     env:
       PYTHON_VERSION: 3.11
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Set up Python ${{ env.PYTHON_VERSION }}
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ env.PYTHON_VERSION }}
       - name: Install dependencies
