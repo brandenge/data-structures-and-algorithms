@@ -3,12 +3,8 @@ name: Run Javascript Tests
 on:
   push:
     branches: [ main ]
-    paths:
-    - '*'
   pull_request:
     branches: [ main ]
-    paths:
-    - '*'
 
 jobs:
   build:
