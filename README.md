@@ -35,6 +35,8 @@ Full test suites and [test coverage reports](#testing) are included.
 
 - [Singly Linked List - Fully Iterative](python/data_structures/linked_list_with_iteration.py)
 - [Singly Linked List - Fully Recursive](python/data_structures/linked_list_with_recursion.py)
+- [Stack](python/data_structures/stack.py)
+- [Queue](python/data_structures/queue.py)
 
 ### Algorithms
 
