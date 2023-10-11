@@ -1,3 +1,8 @@
 .coverage
 javascript/coverage
 coverage
+python/__pycache__/
+python/*/__pycache__/
+python/*/*/__pycache__/
+python/.pytest_cache
+python/*/.pytest_cache
