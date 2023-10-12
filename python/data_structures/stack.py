@@ -1,23 +1,4 @@
-class Node():
-    def __init__(self, data = None):
-        self._data = data
-        self._next = None
-
-    @property
-    def data(self):
-        return self._data
-    
-    @property
-    def next(self):
-        return self._next
-    
-    @next.setter
-    def next(self, node):
-        self._next = node
-
-    def count(self):
-        if self._next is None: return 1
-        return 1 + self._next.count()
+from data_structures.node import Node
     
 class Stack():
     def __init__(self):

@@ -1,24 +1,5 @@
-class Node():
-    def __init__(self, data = None):
-        self._data = data
-        self._next = None
+from data_structures.node import Node
 
-    @property
-    def data(self):
-        return self._data
-    
-    @property
-    def next(self):
-        return self._next
-    
-    @next.setter
-    def next(self, node):
-        self._next = node
-
-    def count(self):
-        if self._next is None: return 1
-        return 1 + self._next.count()
-    
 class Queue():
     def __init__(self):
         self._front = None
@@ -36,11 +17,8 @@ class Queue():
     
     def enqueue(self, data):
         node = Node(data)
-        if self.is_empty(): 
-            self._front = node
-            self._back = node
-            return data
-        self._back.next = node
+        if self.is_empty(): self._front = node
+        else: self._back.next = node
         self._back = node
         return data
 
