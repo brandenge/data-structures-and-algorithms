@@ -5,7 +5,14 @@ These are my implementations of common data structures and algorithms, currently
 - [JavaScript](#javascript)
 - [Python](#python)
 
-Full test suites and [test coverage reports](#testing) are included.
+Also includes:
+
+- Full test suites and [test coverage reports](#testing) using Jest and Pytest, respectively.
+- Many examples with both iterative and recursive implementations.
+- [Iterative version of DFS](python/data_structures/binary_tree_with_iteration.py) and [recursive version of BFS](python/data_structures/binary_tree_with_recursion.py) for binary trees in Python.
+- Examples of recursive implementations extracting the recursive logic into the Node class (for [linked lists in Python](python/data_structures/linked_list_with_recursion.py))
+- Examples of recursive implementations keeping the recursive logic in the respsective data structure (for [binary trees in Python](python/data_structures/binary_tree_with_recursion.py))
+- Graphs
 
 ## JavaScript
 
@@ -37,6 +44,8 @@ Full test suites and [test coverage reports](#testing) are included.
 - [Singly Linked List - Fully Recursive](python/data_structures/linked_list_with_recursion.py)
 - [Stack](python/data_structures/stack.py)
 - [Queue](python/data_structures/queue.py)
+- [Binary Tree - Fully Iterative](python/data_structures/binary_tree_with_iteration.py)
+- [Binary Tree - Fully Recursive](python/data_structures/binary_tree_with_recursion.py)
 
 ### Algorithms
 

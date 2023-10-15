@@ -88,3 +88,12 @@ def test_pop(stack):
     assert stack.count() == 0
     assert stack.is_empty()
     assert stack.pop() is None
+
+def test_to_array(stack):
+    assert stack.to_array() == []
+    stack.push(1)
+    assert stack.to_array() == [1]
+    stack.push(2)
+    assert stack.to_array() == [2, 1]
+    stack.push(3)
+    assert stack.to_array() == [3, 2, 1]

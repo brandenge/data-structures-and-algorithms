@@ -53,34 +53,33 @@ def test_peek(queue):
     assert queue.peek() is None
 
 def test_enqueue(queue):
-    assert queue.peek() is None
-    assert queue.count() == 0
+    assert queue.to_array() == []
     assert queue.enqueue(1) == 1
-    assert queue.peek() == 1
-    assert queue.count() == 1
+    assert queue.to_array() == [1]
     assert queue.enqueue(2) == 2
-    assert queue.peek() == 1
-    assert queue.count() == 2
+    assert queue.to_array() == [1, 2]
     assert queue.enqueue(3) == 3
-    assert queue.peek() == 1
-    assert queue.count() == 3
+    assert queue.to_array() == [1, 2, 3]
 
 def test_dequeue(queue):
-    assert queue.dequeue() is None
-    assert queue.count() == 0
     queue.enqueue(1)
     queue.enqueue(2)
     queue.enqueue(3)
-    assert queue.count() == 3
-    assert queue.peek() == 1
+    assert queue.to_array() == [1, 2, 3]
     assert queue.dequeue() == 1
-    assert queue.count() == 2
-    assert queue.peek() == 2
+    assert queue.to_array() == [2, 3]
     assert queue.dequeue() == 2
-    assert queue.count() == 1
-    assert queue.peek() == 3
+    assert queue.to_array() == [3]
     assert queue.dequeue() == 3
-    assert queue.count() == 0
-    assert queue.peek() is None
+    assert queue.to_array() == []
     assert queue.dequeue() is None
-    assert queue.count() == 0
+    assert queue.to_array() == []
+
+def test_to_array(queue):
+    assert queue.to_array() == []
+    queue.enqueue(1)
+    assert queue.to_array() == [1]
+    queue.enqueue(2)
+    assert queue.to_array() == [1, 2]
+    queue.enqueue(3)
+    assert queue.to_array() == [1, 2, 3]

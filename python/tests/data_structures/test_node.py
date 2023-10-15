@@ -28,12 +28,19 @@ def test_initialization():
 def test_properties(node):
     assert node.data is None
     assert node.next is None
+    assert node.left is None
+    assert node.right is None
 
 def test_setters(node):
     assert node.next is None
     node2 = Node(5)
+    node3 = Node(10)
     node.next = node2
     assert node.next == node2
+    node.left = node2
+    node.right = node3
+    assert node.left == node2
+    assert node.right == node3
 
 def test_count_nodes():
     node1 = Node()

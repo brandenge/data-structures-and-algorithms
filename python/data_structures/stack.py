@@ -1,6 +1,6 @@
 from data_structures.node import Node
     
-class Stack():
+class Stack:
     def __init__(self):
         self._top = None
 
@@ -13,7 +13,7 @@ class Stack():
     def count(self):
         if self.is_empty(): return 0
         return self._top.count()
-    
+
     def push(self, data):
         node = Node(data)
         node.next = self._top
@@ -25,3 +25,7 @@ class Stack():
         temp = self._top
         self._top = self._top.next
         return temp.data
+    
+    def to_array(self):
+        if self.is_empty(): return []
+        return self._top.to_array([])

@@ -1,5 +1,6 @@
 from data_structures.node import Node
 
+# Recursive logic put into Node class instead of here
 class LinkedListWithRecursion:
     def __init__(self):
         self._head = None
@@ -36,7 +37,6 @@ class LinkedListWithRecursion:
         return self._head.find_index_of(data)
 
     def to_array(self):
-        print('self is none: ', self is None)
         if self.is_empty(): return []
         return self._head.to_array([])
 

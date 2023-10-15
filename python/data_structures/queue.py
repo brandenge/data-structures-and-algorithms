@@ -1,6 +1,6 @@
 from data_structures.node import Node
 
-class Queue():
+class Queue:
     def __init__(self):
         self._front = None
         self._back = None
@@ -28,3 +28,7 @@ class Queue():
         if self._front == self._back: self._back = None
         self._front = self._front.next
         return temp.data
+    
+    def to_array(self):
+        if self.is_empty(): return []
+        return self._front.to_array([])
