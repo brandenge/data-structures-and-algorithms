@@ -1,42 +1,6 @@
 import pytest
 from data_structures.binary_tree_with_iteration import BinaryTreeWithIteration as Tree
-from data_structures.node import Node
-
-@pytest.fixture
-def tree():
-    return Tree()
-
-@pytest.fixture
-def small_tree():
-    tree = Tree()
-    node1 = Node(1)
-    node2 = Node(2)
-    node3 = Node(3)
-    root = node1
-    tree._root = root
-    root.left = node2
-    root.right = node3
-    return tree
-
-@pytest.fixture
-def medium_tree():
-    tree = Tree()
-    node1 = Node(1)
-    node2 = Node(2)
-    node3 = Node(3)
-    node4 = Node(4)
-    node5 = Node(5)
-    node6 = Node(6)
-    node7 = Node(7)
-    root = node1
-    tree._root = root
-    root.left = node2
-    root.right = node3
-    root.left.left = node4
-    root.left.right = node5
-    root.right.left = node6
-    root.right.right = node7
-    return tree
+from fixtures.binary_trees_with_iteration import tree, small_tree, medium_tree
 
 def test_exists(tree):
     assert tree
@@ -61,7 +25,7 @@ def test_add(tree):
     tree.add(7)
     assert tree.breadth_first_traversal() == [1, 2, 3, 4, 5, 6, 7]
 
-def contains(tree, small_tree):
+def test_includes(tree, small_tree):
     assert tree.includes(1) is False
     assert small_tree.includes(1) is True
     assert small_tree.includes(2) is True

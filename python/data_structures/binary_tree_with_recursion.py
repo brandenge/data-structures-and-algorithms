@@ -1,6 +1,5 @@
 from data_structures.node import Node
 from data_structures.queue import Queue
-from data_structures.stack import Stack
 
 # Note that recursive logic is kept here in binary tree class, outside of Node class
 # An alternative approach would be to move the recursive logic into the Node class
@@ -18,7 +17,7 @@ class BinaryTreeWithRecursion:
             self._root = node
             return data
         
-        # Need a queue because I want to add using BFS, not DFS
+        # Need a queue to add using BFS instead of DFS
         queue = Queue()
         queue.enqueue(self._root)
 
@@ -45,7 +44,10 @@ class BinaryTreeWithRecursion:
         is_included = False
 
         def traverse_includes(current):
-            if current.data == data: is_included = True
+            if current.data == data:
+                nonlocal is_included
+                is_included = True
+                return
             if current.left: traverse_includes(current.left)        
             if current.right: traverse_includes(current.right)
 
