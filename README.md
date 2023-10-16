@@ -48,6 +48,8 @@ Also includes:
 - [Binary Tree - Fully Recursive](python/data_structures/binary_tree_with_recursion.py)
 - [Binary Search Tree - Fully Iterative](python/data_structures/binary_search_tree_with_iteration.py)
 - [Binary Search Tree - Fully Recursive](python/data_structures/binary_search_tree_with_recursion.py)
+- [K-ary Tree - Fully Iterative](python/data_structures/k_ary_tree_with_iteration.py)
+- [K-ary Tree - Fully Recursion](python/data_structures/k_ary_tree_with_recursion.py)
 
 ### Algorithms
 

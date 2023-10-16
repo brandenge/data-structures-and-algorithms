@@ -1,20 +1,19 @@
 from data_structures.node import Node
-from data_structures.queue import Queue
 from data_structures.binary_tree_with_recursion import BinaryTreeWithRecursion
 
 class BinarySearchTreeWithRecursion(BinaryTreeWithRecursion):
     def __init__(self):
         super().__init__()
-    
+
     def add(self, value):
         node = Node(value)
         if self.is_empty():
             self._root = node
             return value
-        
+
         def traverse_add(current):
             if value <= current.data:
-                if not current.left: 
+                if not current.left:
                     current.left = node
                     return
                 else:
@@ -35,6 +34,7 @@ class BinarySearchTreeWithRecursion(BinaryTreeWithRecursion):
 
         def traverse_includes(current):
             if value == current.data:
+                # This nonlocal declaration is needed because Python does not have the same kind of lexical scope as JavaScript
                 nonlocal is_included
                 is_included = True
                 return

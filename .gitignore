@@ -2,3 +2,4 @@
 javascript/coverage
 coverage
 .pytest_cache
+.vscode

@@ -1,6 +1,6 @@
 import pytest
-from data_structures.binary_tree_with_recursion import BinaryTreeWithRecursion as Tree
-from fixtures.binary_trees_with_recursion import tree, small_tree, medium_tree
+from data_structures.k_ary_tree_with_recursion import KaryTreeWithRecursion as Tree
+from fixtures.k_ary_trees_with_recursion import tree, small_tree, medium_tree
 
 def test_exists(tree):
     assert tree
@@ -32,24 +32,24 @@ def test_includes(tree, medium_tree):
     assert medium_tree.includes(6) is True
     assert medium_tree.includes(7) is True
     assert medium_tree.includes(0) is False
-    assert medium_tree.includes(10) is False
+    assert medium_tree.includes(52) is False
 
 def test_breadth_first_traversal(tree, small_tree, medium_tree):
     assert tree.breadth_first_traversal() == []
-    assert small_tree.breadth_first_traversal() == [1, 2, 3]
-    assert medium_tree.breadth_first_traversal() == [1, 2, 3, 4, 5, 6, 7]
+    assert small_tree.breadth_first_traversal() == [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    assert medium_tree.breadth_first_traversal() == [n for n in range(1, 52)]
 
 def test_dfs_pre_order(tree, small_tree, medium_tree):
     assert tree.dfs_pre_order() == []
-    assert small_tree.dfs_pre_order() == [1, 2, 3]
-    assert medium_tree.dfs_pre_order() == [1, 2, 4, 5, 3, 6, 7]
+    assert small_tree.dfs_pre_order() == [1, 2, 5, 6, 7, 3, 8, 9, 4]
+    assert medium_tree.dfs_pre_order() == [1, 2, 7, 32, 33, 34, 35, 36, 8, 37, 38, 39, 40, 41, 9, 42, 43, 44, 45, 46, 10, 47, 48, 49, 50, 51, 11, 3, 12, 13, 14, 15, 16, 4, 17, 18, 19, 20, 21, 5, 22, 23, 24, 25, 26, 6, 27, 28, 29, 30, 31]
 
 def test_dfs_in_order(tree, small_tree, medium_tree):
     assert tree.dfs_in_order() == []
-    assert small_tree.dfs_in_order() == [2, 1, 3]
-    assert medium_tree.dfs_in_order() == [4, 2, 5, 1, 6, 3, 7]
+    assert small_tree.dfs_in_order() == [5, 6, 2, 7, 8, 3, 9, 1, 4]
+    assert medium_tree.dfs_in_order() == [32, 33, 34, 7, 35, 36, 37, 38, 39, 8, 40, 41, 42, 43, 44, 9, 45, 46, 2, 47, 48, 49, 10, 50, 51, 11, 12, 13, 14, 3, 15, 16, 17, 18, 19, 4, 20, 21, 1, 22, 23, 24, 5, 25, 26, 27, 28, 29, 6, 30, 31]
 
 def test_dfs_post_order(tree, small_tree, medium_tree):
     assert tree.dfs_post_order() == []
-    assert small_tree.dfs_post_order() == [2, 3, 1]
-    assert medium_tree.dfs_post_order() == [4, 5, 2, 6, 7, 3, 1]
+    assert small_tree.dfs_post_order() == [5, 6, 7, 2, 8, 9, 3, 4, 1]
+    assert medium_tree.dfs_post_order() == [32, 33, 34, 35, 36, 7, 37, 38, 39, 40, 41, 8, 42, 43, 44, 45, 46, 9, 47, 48, 49, 50, 51, 10, 11, 2, 12, 13, 14, 15, 16, 3, 17, 18, 19, 20, 21, 4, 22, 23, 24, 25, 26, 5, 27, 28, 29, 30, 31, 6, 1]

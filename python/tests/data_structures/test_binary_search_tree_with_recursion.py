@@ -10,25 +10,26 @@ def test_initialization(tree):
 
 def test_add(tree):
     assert tree.breadth_first_traversal() == []
-    tree.add(1)
+    assert tree.add(1) == 1
     assert tree.breadth_first_traversal() == [1]
-    tree.add(2)
+    assert tree.add(2) == 2
     assert tree.breadth_first_traversal() == [1, 2]
-    tree.add(3)
+    assert tree.add(3) == 3
     assert tree.breadth_first_traversal() == [1, 2, 3]
-    tree.add(4)
+    assert tree.add(4) == 4
     assert tree.breadth_first_traversal() == [1, 2, 3, 4]
-    tree.add(5)
+    assert tree.add(5) == 5
     assert tree.breadth_first_traversal() == [1, 2, 3, 4, 5]
-    tree.add(6)
+    assert tree.add(6) == 6
     assert tree.breadth_first_traversal() == [1, 2, 3, 4, 5, 6]
-    tree.add(7)
+    assert tree.add(7) == 7
     assert tree.breadth_first_traversal() == [1, 2, 3, 4, 5, 6, 7]
 
-def test_includes(tree, small_tree):
+def test_includes(tree, medium_tree):
     assert tree.includes(1) is False
-    assert small_tree.includes(1) is True
-    assert small_tree.includes(2) is True
-    assert small_tree.includes(3) is True
-    assert small_tree.includes(0) is False
-    assert small_tree.includes(4) is False
+    assert medium_tree.includes(4) is True
+    assert medium_tree.includes(5) is True
+    assert medium_tree.includes(6) is True
+    assert medium_tree.includes(7) is True
+    assert medium_tree.includes(0) is False
+    assert medium_tree.includes(10) is False
