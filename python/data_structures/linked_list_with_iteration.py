@@ -98,9 +98,6 @@ class LinkedListWithIteration:
         deleted_node = prev_node.next
         prev_node.next = prev_node.next.next
         if self._tail == deleted_node: self._tail = prev_node
-        if self.count() == 0:
-            self._head = None
-            self._tail = None
         return deleted_node.data
 
     def delete_data(self, data):
@@ -135,7 +132,7 @@ class LinkedListWithIteration:
             current = next
         self._head, self._tail = self._tail, self._head
         return self
-  
+
     def sort(self):
         array = self.to_array()
         array.sort()

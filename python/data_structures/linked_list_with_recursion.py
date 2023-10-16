@@ -42,7 +42,7 @@ class LinkedListWithRecursion:
 
     def __str__(self):
         return ' -> '.join(map(str, self.to_array()))
-  
+
     def insert_at_index(self, index, data):
         if index == 0: return self.prepend(data)
         if index == self.count(): return self.append(data)
@@ -65,9 +65,6 @@ class LinkedListWithRecursion:
         deleted_node = prev_node.next
         prev_node.next = prev_node.next.next
         if self._tail == deleted_node: self._tail = prev_node
-        if self.count() == 0:
-            self._head = None
-            self._tail = None
         return deleted_node.data
 
     def delete_data(self, data):
@@ -85,7 +82,7 @@ class LinkedListWithRecursion:
             self._tail.next = list._head
             self._tail = list._tail
             return self
-        
+
         prev_node = self._get_previous_node_by_index(index)
         next_node = prev_node.next
         prev_node.next = list._head
@@ -97,7 +94,7 @@ class LinkedListWithRecursion:
         self._head.reverse(None)
         self._head, self._tail = self._tail, self._head
         return self
-  
+
     def sort(self):
         array = self.to_array()
         array.sort()
