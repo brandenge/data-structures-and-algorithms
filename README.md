@@ -63,11 +63,12 @@ Also includes:
 
 From the `python` directory:
 
-- Run `coverage run -m pytest` to run the full test suite for Python implementations.
+- Run `pytest` or `coverage run -m pytest` to run the full test suite for Python implementations.
 - Run `open htmlcov/index.html` after running the test suite to see the coverage report in the browser.
 - Run `coverage run -m pytest -k <test_name>` to run an individual test.
 
 ![Python Test Coverage Report](python-test-coverage.png)
+![Python Test Output](python-test-output.png)
 
 ### JavaScript
 
