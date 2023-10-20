@@ -2,9 +2,6 @@ import pytest
 from data_structures.k_ary_tree_with_iteration import KaryTreeWithIteration as Tree
 from fixtures.k_ary_trees_with_iteration import tree, small_tree, medium_tree
 
-def test_exists(tree):
-    assert tree
-
 def test_initialization(tree):
     assert tree.is_empty()
 

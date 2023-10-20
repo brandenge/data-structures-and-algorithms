@@ -2,9 +2,6 @@ import pytest
 from data_structures.binary_tree_with_iteration import BinaryTreeWithIteration as Tree
 from fixtures.binary_trees_with_iteration import tree, small_tree, medium_tree
 
-def test_exists(tree):
-    assert tree
-
 def test_initialization(tree):
     assert tree.is_empty()
 

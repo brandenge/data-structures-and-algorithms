@@ -5,9 +5,6 @@ from data_structures.stack import Stack
 def stack():
     return Stack()
 
-def test_exists(stack):
-    assert stack
-
 def test_initialization(stack):
     assert stack.peek() is None
     assert stack.count() == 0

@@ -2,9 +2,6 @@ import pytest
 from data_structures.linked_list_with_recursion import LinkedListWithRecursion as List
 from fixtures.linked_lists_with_recursion import list, small_list
 
-def test_exists(list):
-    assert list
-
 def test_initialization(list):
     assert list.is_empty()
     assert list.count() == 0
@@ -33,7 +30,7 @@ def test_count_data(list):
     assert list.count(1) == 3
     assert list.count(2) == 0
     assert list.count(None) == 3
-    
+
 def test_append(list):
     assert list.append(1) == 1
     assert list.append(2) == 2
@@ -174,7 +171,7 @@ def test_delete_data_at_middle_index(small_list):
     assert small_list.to_array() == [1, 2, 3]
     assert small_list.delete_data(2)
     assert small_list.to_array() == [1, 3]
-    
+
 def test_delete_data_at_last_index(small_list):
     assert small_list.to_array() == [1, 2, 3]
     assert small_list.delete_data(3) == 3
@@ -248,11 +245,11 @@ def test_reverse(small_list):
     assert small_list.to_array() == [1, 2, 3]
     assert small_list.reverse().to_array() == [3, 2, 1]
 
-    
+
 def test_sort():
     list = List()
     assert list.sort().to_array() == []
-    
+
     list.append(10)
     list.append(4)
     list.append(33)

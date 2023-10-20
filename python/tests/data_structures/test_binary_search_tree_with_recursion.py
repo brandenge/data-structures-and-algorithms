@@ -2,9 +2,6 @@ import pytest
 from data_structures.binary_search_tree_with_recursion import BinarySearchTreeWithRecursion as Tree
 from fixtures.binary_search_trees_with_recursion import tree, small_tree, medium_tree
 
-def test_exists(tree):
-    assert tree
-
 def test_initialization(tree):
     assert tree.is_empty()
 

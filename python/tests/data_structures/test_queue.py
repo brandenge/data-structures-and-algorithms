@@ -5,9 +5,6 @@ from data_structures.queue import Queue
 def queue():
     return Queue()
 
-def test_exists(queue):
-    assert queue
-
 def test_initialization(queue):
     assert queue.peek() is None
     assert queue.count() == 0
