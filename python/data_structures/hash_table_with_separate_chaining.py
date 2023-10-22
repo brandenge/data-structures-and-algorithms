@@ -46,3 +46,8 @@ class HashTableWithSeparateChaining:
         for key in self._keys:
             new_hash_table.set(key, self.get(key))
         return new_hash_table
+
+    def left_join(self, hash_table):
+        for key in hash_table.keys():
+            self.set(key, hash_table.get(key))
+        return self
