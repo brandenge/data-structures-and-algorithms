@@ -5,9 +5,14 @@ class Node:
         self.left = None
         self.right = None
         self.children = []
+        self.key = None
 
     @property
     def data(self):
+        return self._data
+    
+    @property
+    def value(self):
         return self._data
 
     # Methods for LinkedListWithRecursion class

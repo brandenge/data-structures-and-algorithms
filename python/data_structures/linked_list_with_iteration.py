@@ -51,11 +51,12 @@ class LinkedListWithIteration:
             index += 1
             current = current.next
 
-    def to_array(self):
+    def to_array(self, nodes = False):
         array = []
         current = self._head
         while current:
-            array.append(current.data)
+            if nodes: array.append(current)
+            else: array.append(current.data)
             current = current.next
         return array
 
@@ -140,3 +141,34 @@ class LinkedListWithIteration:
         for element in array:
             list.append(element)
         return list
+
+    def add_hash_key_value(self, key, value):
+        node = Node(value)
+        node.key = key
+        node.next = self._head
+        self._head = node
+        if self._tail is None: self._tail = node
+        return value
+
+    def get_hash_key_value(self, key):
+        current = self._head
+        while current:
+            if current.key == key: return current.value
+            current = current.next
+
+    def get_hash_key_values(self):
+        return self.to_array(nodes = True)
+
+    def remove_hash_key_value(self, key):
+        if self.is_empty(): return
+        if self._head.key == key:
+            self._head = self._head.next
+            if self._head is None: self._tail = None
+            return
+        current = self._head
+        while current.next:
+            if current.next.key == key:
+                if current.next is self._tail: current = self._tail
+                current.next = current.next.next
+                break
+            current = current.next

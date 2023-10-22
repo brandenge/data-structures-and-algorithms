@@ -246,7 +246,6 @@ def test_reverse(small_list):
     assert small_list.to_array() == [1, 2, 3]
     assert small_list.reverse().to_array() == [3, 2, 1]
 
-
 def test_sort():
     list = List()
     assert list.sort().to_array() == []
@@ -257,3 +256,60 @@ def test_sort():
     list.append(-8)
     assert list.to_array() == [10, 4, 33, -8]
     assert list.sort().to_array() == [-8, 4, 10, 33]
+
+def test_add_and_get_hash_key_value():
+    list = List()
+    assert list.get_hash_key_value('a') is None
+    assert list.add_hash_key_value('a', 1) == 1
+    assert list.get_hash_key_value('a') == 1
+    assert list.add_hash_key_value('b', 2) == 2
+    assert list.get_hash_key_value('a') == 1
+    assert list.get_hash_key_value('b') == 2
+    assert list.add_hash_key_value('c', 3) == 3
+    assert list.get_hash_key_value('a') == 1
+    assert list.get_hash_key_value('b') == 2
+    assert list.get_hash_key_value('c') == 3
+
+def test_get_hash_key_values():
+    list = List()
+    list.get_hash_key_values() == []
+    list.add_hash_key_value('a', 1)
+    assert list.get_hash_key_values()[0].key == 'a'
+    assert list.get_hash_key_values()[0].value == 1
+    list.add_hash_key_value('b', 2)
+    assert list.get_hash_key_values()[0].key == 'b'
+    assert list.get_hash_key_values()[0].value == 2
+    assert list.get_hash_key_values()[1].key == 'a'
+    assert list.get_hash_key_values()[1].value == 1
+    list.add_hash_key_value('c', 3)
+    assert list.get_hash_key_values()[0].key == 'c'
+    assert list.get_hash_key_values()[0].value == 3
+    assert list.get_hash_key_values()[1].key == 'b'
+    assert list.get_hash_key_values()[1].value == 2
+    assert list.get_hash_key_values()[2].key == 'a'
+    assert list.get_hash_key_values()[2].value == 1
+
+def test_remove_hash_key_values():
+    list = List()
+    list.add_hash_key_value('a', 1)
+    list.add_hash_key_value('b', 2)
+    list.add_hash_key_value('c', 3)
+    assert list.get_hash_key_values()[0].key == 'c'
+    assert list.get_hash_key_values()[0].value == 3
+    assert list.get_hash_key_values()[1].key == 'b'
+    assert list.get_hash_key_values()[1].value == 2
+    assert list.get_hash_key_values()[2].key == 'a'
+    assert list.get_hash_key_values()[2].value == 1
+
+    list.remove_hash_key_value('b')
+    assert list.get_hash_key_values()[0].key == 'c'
+    assert list.get_hash_key_values()[0].value == 3
+    assert list.get_hash_key_values()[1].key == 'a'
+    assert list.get_hash_key_values()[1].value == 1
+
+    list.remove_hash_key_value('c')
+    assert list.get_hash_key_values()[0].key == 'a'
+    assert list.get_hash_key_values()[0].value == 1
+
+    list.remove_hash_key_value('a')
+    assert list.get_hash_key_values() == []

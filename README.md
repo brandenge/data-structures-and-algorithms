@@ -1,6 +1,6 @@
 # Data Structures and Algorithms
 
-These are my implementations of common data structures and algorithms, currently available in the following languages:
+These are my implementations of common [data structures](#data-structures) and [algorithms](#algorithms). Implementations are currently available in the following languages:
 
 - [Python](#python)
 - [JavaScript](#javascript)
@@ -13,7 +13,6 @@ Also includes:
 - [Recursive version of BFS](python/data_structures/binary_tree_with_recursion.py) for binary trees in Python.
 - Examples of recursive implementations extracting the recursive logic into the Node class (for [linked lists in Python](python/data_structures/linked_list_with_recursion.py))
 - Examples of recursive implementations keeping the recursive logic in the respective data structure (for [binary trees in Python](python/data_structures/binary_tree_with_recursion.py))
-- Graphs
 
 ## Python
 
@@ -22,6 +21,8 @@ Also includes:
 - [Graph - with Adjacency Matrix](python/data_structures/graph_with_adjacency_matrix.py)
 - [Graph - with Adjacency List](python/data_structures/graph_with_adjacency_list.py)
 - [Graph - with Edge List](python/data_structures/graph_with_edge_list.py)
+- [Hash Table - with Open Addressing/Closed Hashing](python/data_structures/hash_table_with_open_addressing.py) - using double hashing for the probe sequence
+- [Hash Table - with Separate Chaining/Open Hashing](python/data_structures/hash_table_with_separate_chaining.py)
 - [K-ary Tree - Fully Recursion](python/data_structures/k_ary_tree_with_recursion.py)
 - [K-ary Tree - Fully Iterative](python/data_structures/k_ary_tree_with_iteration.py)
 - [Binary Search Tree - Fully Recursive](python/data_structures/binary_search_tree_with_recursion.py)
