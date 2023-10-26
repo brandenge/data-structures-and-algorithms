@@ -116,7 +116,8 @@ From the `python` directory:
 - Run `open htmlcov/index.html` after running the test suite to see the coverage report in the browser.
 - Run `coverage run -m pytest -k <test_name>` to run an individual test.
 
-![Python Test Coverage Report](python-test-coverage.png)
+![Python Test Coverage Report Part 1](python-test-coverage1.png)
+![Python Test Coverage Report Part 2](python-test-coverage2.png)
 ![Python Test Output](python-test-output.png)
 
 ### JavaScript
