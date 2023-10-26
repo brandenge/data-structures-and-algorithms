@@ -1,4 +1,3 @@
-import pytest
 from data_structures.binary_search_tree_with_iteration import BinarySearchTreeWithIteration as Tree
 from fixtures.binary_search_trees_with_iteration import tree, small_tree, medium_tree
 

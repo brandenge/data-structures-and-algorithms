@@ -1,4 +1,3 @@
-import pytest
 from data_structures.binary_tree_with_recursion import BinaryTreeWithRecursion as Tree
 from fixtures.binary_trees_with_recursion import tree, small_tree, medium_tree
 

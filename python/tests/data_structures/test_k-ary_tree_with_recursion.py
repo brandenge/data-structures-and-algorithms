@@ -1,4 +1,3 @@
-import pytest
 from data_structures.k_ary_tree_with_recursion import KaryTreeWithRecursion as Tree
 from fixtures.k_ary_trees_with_recursion import tree, small_tree, medium_tree
 

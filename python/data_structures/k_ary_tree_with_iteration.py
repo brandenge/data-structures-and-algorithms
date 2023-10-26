@@ -118,23 +118,6 @@ class KaryTreeWithIteration:
 
         return data
 
-    # def dfs_in_order(self):
-    #     if self.is_empty(): return []
-    #     data = []
-    #     stack = Stack()
-    #     current = self._root
-    #     while not stack.is_empty() or current:
-    #         # Find the left-most node
-    #         if current:
-    #             stack.push(current)
-    #             current = current.left
-    #         # After we reach the left-most node
-    #         else:
-    #             prev = stack.pop()
-    #             data.append(prev.data)
-    #             current = prev.right
-    #     return data
-
     def dfs_post_order(self):
         if self.is_empty(): return []
         data = []

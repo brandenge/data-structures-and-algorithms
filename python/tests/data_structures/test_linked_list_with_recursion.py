@@ -1,4 +1,3 @@
-import pytest
 from data_structures.linked_list_with_recursion import LinkedListWithRecursion as List
 from fixtures.linked_lists_with_recursion import list, small_list
 

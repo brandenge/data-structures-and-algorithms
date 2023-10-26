@@ -1,4 +1,3 @@
-import pytest
 from data_structures.hash_table_with_separate_chaining import HashTableWithSeparateChaining as HashTable
 
 def test_initialization():
@@ -73,3 +72,16 @@ def test_collision_resolution():
     assert hash_table.get('b') == 2
     assert hash_table.get('a') == 1
     assert hash_table.keys() == ['a', 'b', 'c']
+
+def test_left_join():
+    hash_table1 = HashTable(100)
+    hash_table2 = HashTable(10)
+    hash_table1.set('abc', 123)
+    hash_table2.set('a', 1)
+    hash_table2.set('b', 2)
+    hash_table2.set('c', 3)
+    hash_table1.left_join(hash_table2)
+    assert hash_table1.get('abc') == 123
+    assert hash_table1.get('a') == 1
+    assert hash_table1.get('b') == 2
+    assert hash_table1.get('c') == 3

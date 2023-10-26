@@ -5,7 +5,7 @@ These are my implementations of common [data structures](#data-structures) and [
 - [Python](#python)
 - [JavaScript](#javascript)
 
-Also includes:
+Highlights:
 
 - Full test suites and [test coverage reports](#testing) using Jest and Pytest, respectively.
 - Both iterative and recursive implementations.
@@ -18,17 +18,28 @@ Also includes:
 
 ### Data Structures
 
+#### Graphs
+
 - [Graph - with Adjacency Matrix](python/data_structures/graph_with_adjacency_matrix.py)
 - [Graph - with Adjacency List](python/data_structures/graph_with_adjacency_list.py)
 - [Graph - with Edge List](python/data_structures/graph_with_edge_list.py)
+
+#### Hash Tables
+
 - [Hash Table - with Open Addressing/Closed Hashing](python/data_structures/hash_table_with_open_addressing.py) - using double hashing for the probe sequence
 - [Hash Table - with Separate Chaining/Open Hashing](python/data_structures/hash_table_with_separate_chaining.py)
+
+#### Trees
+
 - [K-ary Tree - Fully Recursion](python/data_structures/k_ary_tree_with_recursion.py)
 - [K-ary Tree - Fully Iterative](python/data_structures/k_ary_tree_with_iteration.py)
 - [Binary Search Tree - Fully Recursive](python/data_structures/binary_search_tree_with_recursion.py)
 - [Binary Search Tree - Fully Iterative](python/data_structures/binary_search_tree_with_iteration.py)
 - [Binary Tree - Fully Recursive](python/data_structures/binary_tree_with_recursion.py)
 - [Binary Tree - Fully Iterative](python/data_structures/binary_tree_with_iteration.py)
+
+#### Linear Data Structures
+
 - [Singly Linked List - Fully Iterative](python/data_structures/linked_list_with_iteration.py)
 - [Singly Linked List - Fully Recursive](python/data_structures/linked_list_with_recursion.py)
 - [Stack](python/data_structures/stack.py)
@@ -36,18 +47,57 @@ Also includes:
 
 ### Algorithms
 
+#### Searching
+
+[Search Algorithms](python/algorithms/search.py)
+
+- Linear Search
+- Binary Search
+
+#### Sorting
+
+[Sorting Algorithms](python/algorithms/sorting.py)
+
+- Bubble Sort
+- Selection Sort
+- Insertion Sort
+- Merge Sort
+- Quick Sort, with simplified implementation
+- Quick Sort, with Lomuto partitioning and Sedgewick's median-of-three pivot choice
+- Quick Sort, with Hoare partitioning and Sedgewick's median-of-three pivot choice
+
+#### Other
+
 ## JavaScript
 
 ### Data Structures
 
+#### Graphs
+
 - [Directed Graph - Using Adjacency List](javascript/graph/README.md)
+
+#### Hash Tables
+
 - [Hash Table](javascript/hash-table/README.md)
+
+#### Trees
+
 - [Binary Tree, Binary Search Tree, and K-ary Tree with Depth First Traversal (Pre-Order, In-Order, and Post-Order)](javascript/binary-tree-and-bst/README.md)
+
+#### Linear Data Structures
+
 - [Doubly Linked List](javascript/doubly-linked-list/README.md)
 - [Singly Linked List](javascript/singly-linked-list/README.md)
 - [Stack and Queue](javascript/stack-and-queue/README.md)
 
 ### Algorithms
+
+#### Sorting
+
+- [Merge Sort](javascript/merge-sort/README.md)
+- [Insertion Sort](javascript/insertion-sort/README.md)
+
+#### Other
 
 - [Business Trip - Traversing A Weighted, Directed Graph](javascript/graph-business-trip/README.md)
 - [Hash Map Left Join](javascript/hashmap-left-join/README.md)
@@ -55,8 +105,6 @@ Also includes:
 - [Tree Fizz Buzz](javascript/tree-fizz-buzz/README.md)
 - [Validate Brackets](javascript/stack-queue-brackets/README.md)
 - [Zip Two Linked Lists](javascript/linked-list-zip/README.md)
-- [Merge Sort](javascript/merge-sort/README.md)
-- [Insertion Sort](javascript/insertion-sort/README.md)
 
 ## Testing
 

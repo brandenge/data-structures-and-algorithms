@@ -1,4 +1,3 @@
-import pytest
 from data_structures.linked_list_with_iteration import LinkedListWithIteration as List
 from fixtures.linked_lists_with_iteration import list, small_list
 

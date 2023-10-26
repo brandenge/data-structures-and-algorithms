@@ -1,4 +1,3 @@
-import pytest
 from data_structures.node import Node
 from fixtures.node import node, nodes
 
