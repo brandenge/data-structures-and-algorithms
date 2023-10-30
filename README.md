@@ -5,7 +5,7 @@ These are my implementations of common [data structures](#data-structures) and [
 - [Python](#python)
 - [JavaScript](#javascript)
 
-Highlights:
+Features:
 
 - Full test suites and [test coverage reports](#testing) using Jest and Pytest, respectively.
 - Both iterative and recursive implementations.
@@ -26,8 +26,8 @@ Highlights:
 
 #### Hash Tables
 
-- [Hash Table - with Open Addressing/Closed Hashing](python/data_structures/hash_table_with_open_addressing.py) - using double hashing for the probe sequence
-- [Hash Table - with Separate Chaining/Open Hashing](python/data_structures/hash_table_with_separate_chaining.py)
+- [Hash Table - with Open Addressing/Closed Hashing](python/data_structures/hash_table_with_open_addressing.py) - with double hashing for the probe sequence
+- [Hash Table - with Separate Chaining/Open Hashing](python/data_structures/hash_table_with_separate_chaining.py) - with linked lists for each bucket
 
 #### Trees
 
@@ -42,8 +42,8 @@ Highlights:
 
 - [Singly Linked List - Fully Iterative](python/data_structures/linked_list_with_iteration.py)
 - [Singly Linked List - Fully Recursive](python/data_structures/linked_list_with_recursion.py)
-- [Stack](python/data_structures/stack.py)
-- [Queue](python/data_structures/queue.py)
+- [Stack](python/data_structures/stack.py) - with node-based implementation
+- [Queue](python/data_structures/queue.py) - with node-based implementation
 
 ### Algorithms
 
@@ -62,11 +62,33 @@ Highlights:
 - Selection Sort
 - Insertion Sort
 - Merge Sort
-- Quick Sort, with simplified implementation
-- Quick Sort, with Lomuto partitioning and Sedgewick's median-of-three pivot choice
-- Quick Sort, with Hoare partitioning and Sedgewick's median-of-three pivot choice
+- Quicksort, with a simplified implementation and a random pivot
+- Quicksort, with Lomuto partitioning and Sedgewick's median-of-three pivot choice
+- Quicksort, with Hoare partitioning and 2 different versions with different pivot choices
 
 #### Other
+
+- [Fibonacci Sequence](python/algorithms/fibonacci.py) - using dynamic programming in different variations, including memoization via a closure and a space-optimized, bottom-up iterative approach.
+- [Generators](python/algorithms/generator.py)
+
+#### To Do List
+
+- Binary Search Tree Delete
+- Dijkstra's algorithm
+- Bellman-Ford (for weighted graph with negative weights)
+- Topological sort
+- Quickselect (search)
+- Golomb Sequence
+- Unique paths problem
+- Priority Queue
+- Double-ended Queue
+- Binary Heap
+- Trie
+- Red-Black Tree
+- AVL Tree
+- Heapsort
+- Timsort
+- Radix sort
 
 ## JavaScript
 

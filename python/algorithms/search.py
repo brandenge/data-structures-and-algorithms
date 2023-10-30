@@ -1,29 +1,28 @@
-def linear_search_iterative(value, array):
-    for i in range(len(array)):
-        if array[i] == value: return i
+def linear_search_iterative(value, arr):
+    for i in range(len(arr)):
+        if arr[i] == value: return i
 
-def linear_search_recursive(value, array, i = 0):
-    if i >= len(array): return None
-    if array[i] == value: return i
-    return linear_search_recursive(value, array, i + 1)
+def linear_search_recursive(value, arr, i = 0):
+    if i >= len(arr): return None
+    if arr[i] == value: return i
+    return linear_search_recursive(value, arr, i + 1)
 
-def binary_search_iterative(value, array):
+def binary_search_iterative(value, arr):
     left = 0
-    right = len(array) - 1
-    middle = (left + right) // 2
+    right = len(arr) - 1
     while left <= right:
-        if array[middle] == value: return middle
-        elif array[middle] < value: left = middle + 1
-        elif array[middle] > value: right = middle - 1
-        middle = (left + right) // 2
+        mid = (left + right) // 2
+        if arr[mid] == value: return mid
+        elif arr[mid] < value: left = mid + 1
+        elif arr[mid] > value: right = mid - 1
 
-def binary_search_recursive(value, array, left = None, right = None):
+def binary_search_recursive(value, arr, left = None, right = None):
     if left is None and right is None:
         left = 0
-        right = len(array) - 1
-    middle = (left + right) // 2
+        right = len(arr) - 1
+    mid = (left + right) // 2
     if left > right: return None
-    if array[middle] == value: return middle
-    if array[middle] < value: left = middle + 1
-    elif array[middle] > value: right = middle - 1
-    return binary_search_recursive(value, array, left, right)
+    if arr[mid] == value: return mid
+    if arr[mid] < value: left = mid + 1
+    elif arr[mid] > value: right = mid - 1
+    return binary_search_recursive(value, arr, left, right)

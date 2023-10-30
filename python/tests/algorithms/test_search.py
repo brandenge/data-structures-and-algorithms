@@ -1,5 +1,4 @@
-import pytest
-from algorithms.search import linear_search_iterative, linear_search_recursive, binary_search_iterative, binary_search_recursive
+from algorithms.search import *
 
 def test_linear_search_iterative():
     array = [7, 6, 5, 4, 3, 2, 1]

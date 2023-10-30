@@ -1,5 +1,5 @@
 import pytest
-from algorithms.sorting import bubble_sort, selection_sort, insertion_sort, merge_sort, quick_sort_simplified, quick_sort_lomuto_partition, quick_sort_hoare_partition
+from algorithms.sorting import *
 
 @pytest.fixture
 def pre_sorted():
@@ -95,3 +95,13 @@ def test_quick_sort_hoare_partition(pre_sorted, reverse_sorted, random_unsorted,
     assert quick_sort_hoare_partition(random_unsorted) == [1, 2, 3, 4, 5, 6, 7]
     assert quick_sort_hoare_partition(unsorted_duplicates) == [0, 0, 1, 1, 2, 5]
     assert quick_sort_hoare_partition(all_duplicates) == [2, 2, 2, 2, 2, 2, 2]
+
+def test_quick_sort_hoare_partition_alternative(pre_sorted, reverse_sorted, random_unsorted, unsorted_duplicates, all_duplicates):
+    assert quick_sort_hoare_partition_alternative([]) == []
+    assert quick_sort_hoare_partition_alternative([1]) == [1]
+    assert quick_sort_hoare_partition_alternative([2, 1]) == [1, 2]
+    assert quick_sort_hoare_partition_alternative(pre_sorted) == [1, 2, 3, 4, 5, 6, 7]
+    assert quick_sort_hoare_partition_alternative(reverse_sorted) == [1, 2, 3, 4, 5, 6, 7]
+    assert quick_sort_hoare_partition_alternative(random_unsorted) == [1, 2, 3, 4, 5, 6, 7]
+    assert quick_sort_hoare_partition_alternative(unsorted_duplicates) == [0, 0, 1, 1, 2, 5]
+    assert quick_sort_hoare_partition_alternative(all_duplicates) == [2, 2, 2, 2, 2, 2, 2]
