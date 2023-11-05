@@ -1,5 +1,5 @@
 from data_structures.node import Node
-from fixtures.node import node, nodes
+from fixtures.node import *
 
 def test_initialization():
     node1 = Node()

@@ -1,5 +1,5 @@
 from data_structures.binary_search_tree_with_iteration import BinarySearchTreeWithIteration as Tree
-from fixtures.binary_search_trees_with_iteration import tree, small_tree, medium_tree
+from fixtures.binary_search_trees_with_iteration import *
 
 def test_initialization(tree):
     assert tree.is_empty()
@@ -24,6 +24,28 @@ def test_add(tree):
     assert tree.breadth_first_traversal() == [0, -10, 10, -20, -5, 5, 20, 15]
     assert tree.add(-15) == -15
     assert tree.breadth_first_traversal() == [0, -10, 10, -20, -5, 5, 20, -15, 15]
+
+def test_delete(tree, medium_tree):
+    assert tree.delete(1) is None
+    assert medium_tree.breadth_first_traversal() == [0, -10, 10, -15, -5, 5, 15]
+    assert medium_tree.delete(-1) is None
+    assert medium_tree.breadth_first_traversal() == [0, -10, 10, -15, -5, 5, 15]
+    assert medium_tree.delete(0) == 0
+    assert medium_tree.breadth_first_traversal() == [5, -10, 10, -15, -5, 15]
+    assert medium_tree.delete(-10) == -10
+    assert medium_tree.breadth_first_traversal() == [5, -5, 10, -15, 15]
+    assert medium_tree.delete(15) == 15
+    assert medium_tree.breadth_first_traversal() == [5, -5, 10, -15]
+    assert medium_tree.delete(-15) == -15
+    assert medium_tree.breadth_first_traversal() == [5, -5, 10]
+    assert medium_tree.delete(5) == 5
+    assert medium_tree.breadth_first_traversal() == [10, -5]
+    assert medium_tree.delete(-5) == -5
+    assert medium_tree.breadth_first_traversal() == [10]
+    assert medium_tree.delete(10) == 10
+    assert medium_tree.breadth_first_traversal() == []
+    assert medium_tree.delete(10) is None
+    assert medium_tree.breadth_first_traversal() == []
 
 def test_includes(tree, medium_tree):
     assert tree.includes(0) is False

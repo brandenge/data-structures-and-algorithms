@@ -1,5 +1,5 @@
 from data_structures.binary_search_tree_with_recursion import BinarySearchTreeWithRecursion as Tree
-from fixtures.binary_search_trees_with_recursion import tree, small_tree, medium_tree
+from fixtures.binary_search_trees_with_recursion import *
 
 def test_initialization(tree):
     assert tree.is_empty()
@@ -24,6 +24,30 @@ def test_add(tree):
     assert tree.breadth_first_traversal() == [0, -10, 10, -20, -5, 5, 20, 15]
     assert tree.add(-15) == -15
     assert tree.breadth_first_traversal() == [0, -10, 10, -20, -5, 5, 20, -15, 15]
+
+# Note that this version is different from the iterative version in that
+# it returns nodes, not values, and it does not return the deleted value
+def test_delete(tree, medium_tree):
+    assert tree.delete(1) is None
+    assert medium_tree.breadth_first_traversal() == [0, -10, 10, -15, -5, 5, 15]
+    medium_tree.delete(-1)
+    assert medium_tree.breadth_first_traversal() == [0, -10, 10, -15, -5, 5, 15]
+    medium_tree.delete(0)
+    assert medium_tree.breadth_first_traversal() == [5, -10, 10, -15, -5, 15]
+    medium_tree.delete(-10)
+    assert medium_tree.breadth_first_traversal() == [5, -5, 10, -15, 15]
+    medium_tree.delete(15)
+    assert medium_tree.breadth_first_traversal() == [5, -5, 10, -15]
+    medium_tree.delete(-15)
+    assert medium_tree.breadth_first_traversal() == [5, -5, 10]
+    medium_tree.delete(5)
+    assert medium_tree.breadth_first_traversal() == [10, -5]
+    medium_tree.delete(-5)
+    assert medium_tree.breadth_first_traversal() == [10]
+    medium_tree.delete(10)
+    assert medium_tree.breadth_first_traversal() == []
+    medium_tree.delete(10)
+    assert medium_tree.breadth_first_traversal() == []
 
 def test_includes(tree, medium_tree):
     assert tree.includes(0) is False

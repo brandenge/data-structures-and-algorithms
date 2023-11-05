@@ -8,7 +8,7 @@ class BinaryTreeWithIteration:
 
     def is_empty(self):
         return self._root is None
-    
+
     def add(self, data):
         node = Node(data)
         if self.is_empty():
@@ -18,7 +18,7 @@ class BinaryTreeWithIteration:
         queue.enqueue(self._root)
         while not queue.is_empty():
             current = queue.dequeue()
-            if not current.left: 
+            if not current.left:
                 current.left = node
                 return data
             elif not current.right:
@@ -27,6 +27,62 @@ class BinaryTreeWithIteration:
             else:
                 if current.left: queue.enqueue(current.left)
                 if current.right: queue.enqueue(current.right)
+
+    def find_parent(self, data):
+        if self.is_empty() or self._root.data == data: return
+        queue = Queue()
+        queue.enqueue(self._root)
+        while not queue.is_empty():
+            current = queue.dequeue()
+            if (current.left and current.left.data == data or
+                current.right and current.right.data == data):
+                return current
+            else:
+                if current.left: queue.enqueue(current.left)
+                if current.right: queue.enqueue(current.right)
+
+    def find_last_node(self):
+        if self.is_empty(): return
+        queue = Queue()
+        queue.enqueue(self._root)
+        while not queue.is_empty():
+            current = queue.dequeue()
+            if current.left: queue.enqueue(current.left)
+            if current.right: queue.enqueue(current.right)
+            if queue.is_empty(): return current
+
+    # Simple implementation that swaps the deleted node with the last node
+    def delete(self, data):
+        if self.is_empty(): return
+        last_node = self.find_last_node()
+
+        node_to_delete = None
+        parent_of_last_node = None
+        last_node = None
+
+        queue = Queue()
+        queue.enqueue(self._root)
+        while not queue.is_empty():
+            current = queue.dequeue()
+            if current.data == data:
+                node_to_delete = current
+            if current.left:
+                parent_of_last_node = current
+                queue.enqueue(current.left)
+            if current.right:
+                parent_of_last_node = current
+                queue.enqueue(current.right)
+            if queue.is_empty(): last_node = current
+
+        if node_to_delete:
+            if not parent_of_last_node:
+                self._root = None
+                return data
+            node_to_delete.data = last_node.data
+            if parent_of_last_node.right == last_node:
+                parent_of_last_node.right = None
+            else: parent_of_last_node.left = None
+            return data
 
     def includes(self, data):
         if self.is_empty(): return False
@@ -50,7 +106,7 @@ class BinaryTreeWithIteration:
             if current.left: queue.enqueue(current.left)
             if current.right: queue.enqueue(current.right)
         return data
-    
+
     def dfs_pre_order(self):
         if self.is_empty(): return []
         data = []
@@ -96,7 +152,7 @@ class BinaryTreeWithIteration:
                 data.append(prev.data)
                 current = prev.right
         return data
-    
+
     def dfs_post_order(self):
         # Note the use of current is the only thing that traverses the tree downward only
         # The stack is what is used to traverse across and up the tree
@@ -115,7 +171,7 @@ class BinaryTreeWithIteration:
 
             if stack.is_empty(): return data
             current = stack.pop()
-    
+
             if current.right and current.right == stack.peek():
                 # Reverse the ordering on the stack so that current will be in front of its right child
                 # Current right child is first removed, to be added back in the above loop

@@ -26,6 +26,51 @@ class KaryTreeWithIteration:
                 for child in current.children:
                     queue.enqueue(child)
 
+    def find_parent(self, target):
+        if self.is_empty() or self._root == target: return
+        queue = Queue()
+        queue.enqueue(self._root)
+        while not queue.is_empty():
+            current = queue.dequeue()
+            for idx, child in enumerate(current.children):
+                if child == target: return [current, idx]
+                else: queue.enqueue(child)
+
+    def find_node_to_delete_and_last_node(self, data_to_delete):
+        if self.is_empty(): return
+        node_to_delete = None
+        queue = Queue()
+        queue.enqueue(self._root)
+        while not queue.is_empty():
+            current = queue.dequeue()
+            if current.data == data_to_delete: node_to_delete = current
+            for idx, child in enumerate(current.children):
+                queue.enqueue(child)
+            if queue.is_empty(): return [node_to_delete, current]
+
+    # Simple implementation that swaps the deleted node with the last node
+    def delete(self, data):
+        if self.is_empty(): return
+        node_to_delete, last_node = self.find_node_to_delete_and_last_node(data)
+        parent_info = self.find_parent(last_node)
+
+        # The last_node is the root, i.e. there is only one node in the tree
+        if parent_info is None:
+            self._root = None
+            return data
+
+        parent_of_last_node, last_node_idx = parent_info
+        if node_to_delete:
+            node_to_delete.data = last_node.data
+
+            # To delete the last node, recreate it's parent's list of children
+            # And re-assign it
+            parent_children = []
+            for idx, child in enumerate(parent_of_last_node.children):
+                if idx != last_node_idx: parent_children.append(child)
+            parent_of_last_node.children = parent_children
+            return data
+
     def includes(self, data):
         if self.is_empty(): return False
         queue = Queue()

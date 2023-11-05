@@ -10,10 +10,14 @@ class Node:
     @property
     def data(self):
         return self._data
-    
+
     @property
     def value(self):
         return self._data
+
+    @data.setter
+    def data(self, data):
+        self._data = data
 
     # Methods for LinkedListWithRecursion class
     def count(self, data = None):
@@ -58,22 +62,27 @@ class Node:
         return next.reverse(self)
 
     # Methods for KaryTreeWithRecursion class
-    def enqueue_children(self, queue, index = 0): # Used to do BFS recursively
+
+    # For recursive BFS
+    def enqueue_children(self, queue, index = 0):
         if index >= len(self.children): return queue
         queue.enqueue(self.children[index])
         return self.enqueue_children(queue, index + 1)
 
+    # For BFS, and DFS pre-order and post-order traversal
     def traverse_children(self, func, index = 0):
         if index >= len(self.children): return
         func(self.children[index])
         self.traverse_children(func, index + 1)
 
+    # For DFS In-Order traversal
     def traverse_first_half_children(self, func, index = 0):
         if len(self.children) == 2 and index == 1: return
         if index > len(self.children) // 2: return
         func(self.children[index])
         self.traverse_first_half_children(func, index + 1)
 
+    # For DFS In-Order traversal
     def traverse_second_half_children(self, func, index):
         if index >= len(self.children): return
         func(self.children[index])

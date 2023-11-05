@@ -1,5 +1,5 @@
 from data_structures.graph_with_adjacency_list import GraphWithAdjacencyList as Graph
-from fixtures.graphs_with_adjacency_list import small_graph
+from fixtures.graphs_with_adjacency_list import *
 
 def test_initialization():
     graph = Graph()

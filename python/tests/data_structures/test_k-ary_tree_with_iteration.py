@@ -1,5 +1,5 @@
 from data_structures.k_ary_tree_with_iteration import KaryTreeWithIteration as Tree
-from fixtures.k_ary_trees_with_iteration import tree, small_tree, medium_tree
+from fixtures.k_ary_trees_with_iteration import *
 
 def test_initialization(tree):
     assert tree.is_empty()
@@ -20,6 +20,47 @@ def test_add(tree):
     assert tree.breadth_first_traversal() == [1, 2, 3, 4, 5, 6]
     assert tree.add(7) == 7
     assert tree.breadth_first_traversal() == [1, 2, 3, 4, 5, 6, 7]
+
+def test_find_node_to_delete_and_last_node(tree, small_tree, medium_tree):
+    assert tree.find_node_to_delete_and_last_node(1) is None
+
+    node_to_delete, last_node = small_tree.find_node_to_delete_and_last_node(1)
+    assert node_to_delete == small_tree._root
+    assert last_node.data == 9
+
+    node_to_delete, last_node = medium_tree.find_node_to_delete_and_last_node(1)
+    assert node_to_delete == medium_tree._root
+    assert last_node.data == 51
+
+    node_to_delete, last_node = medium_tree.find_node_to_delete_and_last_node(41)
+    assert node_to_delete.data == 41
+    assert last_node.data == 51
+
+def test_delete(tree, small_tree):
+    assert tree.delete(1) is None
+    assert small_tree.breadth_first_traversal() == [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    assert small_tree.delete(-1) is None
+    assert small_tree.breadth_first_traversal() == [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    assert small_tree.delete(1) == 1
+    assert small_tree.breadth_first_traversal() == [9, 2, 3, 4, 5, 6, 7, 8]
+    assert small_tree.delete(2) == 2
+    assert small_tree.breadth_first_traversal() == [9, 8, 3, 4, 5, 6, 7]
+    assert small_tree.delete(7) == 7
+    assert small_tree.breadth_first_traversal() == [9, 8, 3, 4, 5, 6]
+    assert small_tree.delete(6) == 6
+    assert small_tree.breadth_first_traversal() == [9, 8, 3, 4, 5]
+    assert small_tree.delete(3) == 3
+    assert small_tree.breadth_first_traversal() == [9, 8, 5, 4]
+    assert small_tree.delete(5) == 5
+    assert small_tree.breadth_first_traversal() == [9, 8, 4]
+    assert small_tree.delete(8) == 8
+    assert small_tree.breadth_first_traversal() == [9, 4]
+    assert small_tree.delete(9) == 9
+    assert small_tree.breadth_first_traversal() == [4]
+    assert small_tree.delete(4) == 4
+    assert small_tree.breadth_first_traversal() == []
+    assert small_tree.delete(4) is None
+    assert small_tree.breadth_first_traversal() == []
 
 def test_includes(tree, medium_tree):
     assert tree.includes(1) is False

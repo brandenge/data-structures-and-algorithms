@@ -1,5 +1,5 @@
 from data_structures.graph_with_edge_list import GraphWithEdgeList as Graph
-from fixtures.graphs_with_edge_list import small_graph
+from fixtures.graphs_with_edge_list import *
 
 def test_initialization():
     graph = Graph()

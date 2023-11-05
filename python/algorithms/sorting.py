@@ -48,6 +48,7 @@ def merge(left: List, right: List) -> List:
     return merged
 
 # This is more readable, but uses more memory because it does not sort in-place
+# Note that there is no partitioning helper function
 def quick_sort_simplified(arr: List) -> List:
     if len(arr) <= 1: return arr
 

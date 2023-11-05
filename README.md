@@ -1,18 +1,29 @@
 # Data Structures and Algorithms
 
-These are my implementations of common [data structures](#data-structures) and [algorithms](#algorithms). Implementations are currently available in the following languages:
+These are my node-based implementations of common [data structures](#data-structures) and [algorithms](#algorithms).
 
-- [Python](#python)
-- [JavaScript](#javascript)
+All implementations are done in [Python](#python), with some additional implementations also available in [JavaScript](#javascript).
+
+Also includes full test suites and [test coverage reports](#testing) using Pytest and Jest, respectively.
 
 Features:
 
-- Full test suites and [test coverage reports](#testing) using Jest and Pytest, respectively.
-- Both iterative and recursive implementations.
-- [Iterative version of DFS](python/data_structures/binary_tree_with_iteration.py)
-- [Recursive version of BFS](python/data_structures/binary_tree_with_recursion.py) for binary trees in Python.
-- Examples of recursive implementations extracting the recursive logic into the Node class (for [linked lists in Python](python/data_structures/linked_list_with_recursion.py))
-- Examples of recursive implementations keeping the recursive logic in the respective data structure (for [binary trees in Python](python/data_structures/binary_tree_with_recursion.py))
+- Multiple different implementations of many data structures, including graphs (using [edge list](python/data_structures/graph_with_edge_list.py), [adjacency list](python/data_structures/graph_with_adjacency_list.py), or [adjacency matrix](python/data_structures/graph_with_adjacency_matrix.py)), and hash tables (using [separate chaining/open hashing](python/data_structures/hash_table_with_separate_chaining.py), and [open addressing/closed hashing](python/data_structures/hash_table_with_open_addressing.py)).
+- Both iterative and recursive implementations of:
+  - Binary Trees - [iterative](python/data_structures/binary_tree_with_iteration.py), [recursive](python/data_structures/binary_tree_with_recursion.py)
+  - Binary Search Trees - [iterative](python/data_structures/binary_search_tree_with_iteration.py), [recursive](python/data_structures/binary_search_tree_with_recursion.py)
+  - K-ary Trees - [iterative](python/data_structures/k_ary_tree_with_iteration.py), [recursive](python/data_structures/k_ary_tree_with_recursion.py)
+  - Linked Lists - [iterative](python/data_structures/linked_list_with_iteration.py), [recursive](python/data_structures/linked_list_with_recursion.py)
+  - Also including:
+    - [Iterative version of DFS](python/data_structures/binary_tree_with_iteration.py) for binary trees.
+    - [Recursive version of BFS](python/data_structures/binary_tree_with_recursion.py) for binary trees.
+    - Delete methods for BST, binary tree, or k-ary tree, both iteratively and recursively.
+    - Examples of recursive implementations extracting the recursive logic into the [Node class](python/data_structures/node.py) (for [linked lists in Python](python/data_structures/linked_list_with_recursion.py)).
+    - Examples of recursive implementations keeping the recursive logic in the respective data structure (for [binary trees in Python](python/data_structures/binary_tree_with_recursion.py)).
+- Multiple implementations of [quicksort](python/algorithms/sorting.py):
+  1) Simplified
+  2) Using Lomuto's partitioning
+  3) Using Hoare's partitioning
 
 ## Python
 
@@ -73,22 +84,36 @@ Features:
 
 #### To Do List
 
-- Binary Search Tree Delete
-- Dijkstra's algorithm
-- Bellman-Ford (for weighted graph with negative weights)
-- Topological sort
+- Additional implementations for finding the height of a tree
+- Additional implementations for finding the depth of a node in a tree
+- Additional implementations for validating if a tree is balanced
 - Quickselect (search)
 - Golomb Sequence
 - Unique paths problem
+- Dynamic Array
+- Array-based implementations of trees
 - Priority Queue
 - Double-ended Queue
 - Binary Heap
 - Trie
-- Red-Black Tree
-- AVL Tree
+- Dijkstra's algorithm
+  - using an array for unvisited nodes (simplified implementation)
+  - using a priority queue for unvisited nodes (optimized implementation)
+- Bellman-Ford algorithm (for weighted graph with negative weights)
+- Advanced Graph
+  - Bidirectional sort
+  - Topological sort
+  - Minimum spanning tree (MST)
+  - Floyd-Warshall algorithm
+  - Graph coloring
+- Red-Black Tree (self-balancing with rotation operations)
+- AVL (Adelson-Velsky and Landis) Tree (fully self-balancing with rotation operations, either single rotation - left and right, or double rotation - left-right and right-left)
 - Heapsort
 - Timsort
 - Radix sort
+- Counting sort
+- Shellsort
+- Binary space partitioning tree
 
 ## JavaScript
 
@@ -149,3 +174,7 @@ From the `javascript` directory:
 - Run `npm test` to run the full test suite for JavaScript implementations.
 
 ![JavaScript Test Coverage Report](javascript-test-coverage.png)
+
+## Notes To Self
+
+- Many data structure method implementations require direct access to the node. Try coupling the node to the class in future implementations instead of abstracting away the Node class.
