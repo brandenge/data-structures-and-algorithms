@@ -14,7 +14,7 @@ Features:
   - Binary Search Trees - [iterative](python/data_structures/binary_search_tree_with_iteration.py), [recursive](python/data_structures/binary_search_tree_with_recursion.py)
   - K-ary Trees - [iterative](python/data_structures/k_ary_tree_with_iteration.py), [recursive](python/data_structures/k_ary_tree_with_recursion.py)
   - Linked Lists - [iterative](python/data_structures/linked_list_with_iteration.py), [recursive](python/data_structures/linked_list_with_recursion.py)
-  - Also including:
+  - Also includes more advanced and non-standard versions of algorithms, such as:
     - [Iterative version of DFS](python/data_structures/binary_tree_with_iteration.py) for binary trees.
     - [Recursive version of BFS](python/data_structures/binary_tree_with_recursion.py) for binary trees.
     - Delete methods for BST, binary tree, or k-ary tree, both iteratively and recursively.
