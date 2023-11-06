@@ -8,7 +8,7 @@ Also includes full test suites and [test coverage reports](#testing) using Pytes
 
 Features:
 
-- Multiple different implementations of many data structures, including graphs (using [edge list](python/data_structures/graph_with_edge_list.py), [adjacency list](python/data_structures/graph_with_adjacency_list.py), or [adjacency matrix](python/data_structures/graph_with_adjacency_matrix.py)), and hash tables (using [separate chaining/open hashing](python/data_structures/hash_table_with_separate_chaining.py), and [open addressing/closed hashing](python/data_structures/hash_table_with_open_addressing.py)).
+- Multiple different implementations of many data structures, including graphs (using an [edge list](python/data_structures/graph_with_edge_list.py), an [adjacency list](python/data_structures/graph_with_adjacency_list.py), and an [adjacency matrix](python/data_structures/graph_with_adjacency_matrix.py)), and hash tables (using [separate chaining/open hashing](python/data_structures/hash_table_with_separate_chaining.py), and [open addressing/closed hashing](python/data_structures/hash_table_with_open_addressing.py)).
 - Both iterative and recursive implementations of:
   - Binary Trees - [iterative](python/data_structures/binary_tree_with_iteration.py), [recursive](python/data_structures/binary_tree_with_recursion.py)
   - Binary Search Trees - [iterative](python/data_structures/binary_search_tree_with_iteration.py), [recursive](python/data_structures/binary_search_tree_with_recursion.py)
@@ -177,4 +177,4 @@ From the `javascript` directory:
 
 ## Notes To Self
 
-- Many data structure method implementations require direct access to the node. Try coupling the node to the class in future implementations instead of abstracting away the Node class.
+- Many data structure methods require direct access to node objects. Instead of abstracting away the node class for reuse, try coupling separate node classes to each data structure class in future implementations. This might improve encapsulation of the data structure class.
