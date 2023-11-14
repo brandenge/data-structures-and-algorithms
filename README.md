@@ -84,36 +84,44 @@ Features:
 
 #### To Do List
 
-- Additional implementations for finding the height of a tree
-- Additional implementations for finding the depth of a node in a tree
-- Additional implementations for validating if a tree is balanced
-- Quickselect (search)
-- Golomb Sequence
-- Unique paths problem
-- Dynamic Array
-- Array-based implementations of trees
-- Priority Queue
-- Double-ended Queue
-- Binary Heap
-- Trie
-- Dijkstra's algorithm
-  - using an array for unvisited nodes (simplified implementation)
-  - using a priority queue for unvisited nodes (optimized implementation)
-- Bellman-Ford algorithm (for weighted graph with negative weights)
-- Advanced Graph
-  - Bidirectional sort
-  - Topological sort
+- Additional Implementations:
+  - Finding the height of a tree
+  - Finding the depth of a node in a tree
+  - Validating if a tree is balanced
+  - Array-based implementations of trees
+- Additional Data Structures:
+  - Dynamic Array
+  - Priority Queue
+  - Double-ended Queue
+  - Binary Heap
+  - Trie
+  - Binary space partitioning tree
+  - Self-Balancing Trees:
+    - Red-Black Tree
+    - AVL Tree
+    - B-tree
+- Additional Graph Algorithms:
+  - Dijkstra's algorithm:
+    - using an array for unvisited nodes (simplified implementation)
+    - using a priority queue for unvisited nodes (optimized implementation)
+  - Bellman-Ford algorithm (for weighted graph with negative weights)
+  - Backtracking algorithm
   - Minimum spanning tree (MST)
   - Floyd-Warshall algorithm
   - Graph coloring
-- Red-Black Tree (self-balancing with rotation operations)
-- AVL (Adelson-Velsky and Landis) Tree (fully self-balancing with rotation operations, either single rotation - left and right, or double rotation - left-right and right-left)
-- Heapsort
-- Timsort
-- Radix sort
-- Counting sort
-- Shellsort
-- Binary space partitioning tree
+  - Bidirectional sort
+  - Topological sort
+- Additional Sorting Algorithms
+  - Bucket sort
+  - Heapsort
+  - Timsort - more efficient for doing multiple sorting passes by taking advantage of the current ordering
+  - Radix sort
+  - Counting sort
+  - Shellsort
+- Other Algorithms
+  - Quickselect (search)
+  - Golomb Sequence
+  - Unique paths problem
 
 ## JavaScript
 
@@ -175,6 +183,7 @@ From the `javascript` directory:
 
 ![JavaScript Test Coverage Report](javascript-test-coverage.png)
 
-## Notes To Self
+## Notes To Self for Future Implementations
 
 - Many data structure methods require direct access to node objects. Instead of abstracting away the node class for reuse, try coupling separate node classes to each data structure class in future implementations. This might improve encapsulation of the data structure class.
+- Try implementing dunder methods for each data structure, such as `__iter__` and `__next__` for iteration.
