@@ -118,6 +118,7 @@ Features:
   - Radix sort
   - Counting sort
   - Shellsort
+  - Implement stable versions of unstable sorting algorithms
 - Other Algorithms
   - Quickselect (search)
   - Golomb Sequence

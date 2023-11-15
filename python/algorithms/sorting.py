@@ -2,13 +2,17 @@ from math import ceil
 import random
 from typing import List
 
+# Sorted values bubble up to one side. O(n^2) swaps. Stable.
 def bubble_sort(arr: List) -> List:
     for i in range(len(arr)):
         for j in range(len(arr) - 1 - i):
             if arr[j] > arr[j + 1]:
+                # Adjacent swaps
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
     return arr
 
+# Selects the minimum (or maximum) and then inserts it. Only O(n) swaps.
+# Not stable because it swaps non-adjacent elements, but can be made stable.
 def selection_sort(arr: List) -> List:
     for i in range(len(arr)):
         index_min = i
@@ -17,10 +21,12 @@ def selection_sort(arr: List) -> List:
         if index_min != i: arr[index_min], arr[i] = arr[i], arr[index_min]
     return arr
 
+# O(n) in best case. Stable.
 def insertion_sort(arr: List) -> List:
     for i in range(1, len(arr)):
         j = i
         while j > 0 and arr[j - 1] > arr[j]:
+            # Adjacent swaps
             arr[j], arr[j - 1] = arr[j - 1], arr[j]
             j -= 1
     return arr
@@ -37,7 +43,8 @@ def merge_sort(arr: List) -> List:
 def merge(left: List, right: List) -> List:
     merged = []
     while len(left) > 0 and len(right) > 0:
-        if (left[0] < right[0]):
+        # Choose left if equivalent to preserve stability/relative order
+        if (left[0] <= right[0]):
             merged.append(left[0])
             del left[0]
         else:
@@ -46,6 +53,38 @@ def merge(left: List, right: List) -> List:
 
     merged += left + right
     return merged
+
+# In-place implementation of merge sort
+def merge_sort_in_place(arr: List[int], start:int=0, end:int=None) -> List[int]:
+    if end is None: end = len(arr) - 1
+    if end - start + 1 <= 1: return arr
+    mid = (start + end) // 2
+    merge_sort_in_place(arr, start, mid)
+    merge_sort_in_place(arr, mid + 1, end)
+    merge_in_place(arr, start, mid, end)
+    return arr
+
+def merge_in_place(arr, start, mid, end):
+    left, right = arr[start: mid + 1], arr[mid + 1: end + 1]
+    i, j, k = 0, 0, start
+
+    while i < len(left) and j < len(right):
+        if left[i] <= right[j]:
+            arr[k] = left[i]
+            i += 1
+        else:
+            arr[k] = right[j]
+            j += 1
+        k += 1
+
+    while i < len(left):
+        arr[k] = left[i]
+        i += 1
+        k += 1
+    while j < len(right):
+        arr[k] = right[j]
+        j += 1
+        k += 1
 
 # This is more readable, but uses more memory because it does not sort in-place
 # Note that there is no partitioning helper function

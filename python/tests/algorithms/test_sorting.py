@@ -66,6 +66,16 @@ def test_merge_sort(pre_sorted, reverse_sorted, random_unsorted, unsorted_duplic
     assert merge_sort(unsorted_duplicates) == [0, 0, 1, 1, 2, 5]
     assert merge_sort(all_duplicates) == [2, 2, 2, 2, 2, 2, 2]
 
+def test_merge_sort_in_place(pre_sorted, reverse_sorted, random_unsorted, unsorted_duplicates, all_duplicates):
+    assert merge_sort_in_place([]) == []
+    assert merge_sort_in_place([1]) == [1]
+    assert merge_sort_in_place([2, 1]) == [1, 2]
+    assert merge_sort_in_place(pre_sorted) == [1, 2, 3, 4, 5, 6, 7]
+    assert merge_sort_in_place(reverse_sorted) == [1, 2, 3, 4, 5, 6, 7]
+    assert merge_sort_in_place(random_unsorted) == [1, 2, 3, 4, 5, 6, 7]
+    assert merge_sort_in_place(unsorted_duplicates) == [0, 0, 1, 1, 2, 5]
+    assert merge_sort_in_place(all_duplicates) == [2, 2, 2, 2, 2, 2, 2]
+
 def test_quick_sort_simplified(pre_sorted, reverse_sorted, random_unsorted, unsorted_duplicates, all_duplicates):
     assert quick_sort_simplified([]) == []
     assert quick_sort_simplified([1]) == [1]
