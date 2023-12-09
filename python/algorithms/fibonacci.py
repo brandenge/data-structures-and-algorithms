@@ -10,7 +10,6 @@ def fibonacci_memo_list(n: int, memo: list = None):
     return memo[n]
 
 def fibonacci_memo_dict(n: int, memo: dict = {0: 0, 1: 1, 2: 1}):
-    if n < 2: memo[n] = n
     if n in memo: return memo[n]
     memo[n] = fibonacci_memo_dict(n - 1, memo) + fibonacci_memo_dict(n - 2, memo)
     # Memory optimization

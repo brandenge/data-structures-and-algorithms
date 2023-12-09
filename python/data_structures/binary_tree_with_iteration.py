@@ -153,6 +153,18 @@ class BinaryTreeWithIteration:
                 current = prev.right
         return data
 
+    def dfs_in_order_alternative(self):
+        data, stack = [], Stack()
+        current = self._root
+        while True:
+            while current:
+                stack.push(current)
+                current = current.left
+            if stack.is_empty(): return data
+            prev = stack.pop()
+            data.append(prev.data)
+            current = prev.right
+
     def dfs_post_order(self):
         # Note the use of current is the only thing that traverses the tree downward only
         # The stack is what is used to traverse across and up the tree

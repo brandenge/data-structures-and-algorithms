@@ -88,6 +88,11 @@ def test_dfs_in_order(tree, small_tree, medium_tree):
     assert small_tree.dfs_in_order() == [2, 1, 3]
     assert medium_tree.dfs_in_order() == [4, 2, 5, 1, 6, 3, 7]
 
+def test_dfs_in_order_alternative(tree, small_tree, medium_tree):
+    assert tree.dfs_in_order_alternative() == []
+    assert small_tree.dfs_in_order_alternative() == [2, 1, 3]
+    assert medium_tree.dfs_in_order_alternative() == [4, 2, 5, 1, 6, 3, 7]
+
 def test_dfs_post_order(tree, small_tree, medium_tree):
     assert tree.dfs_post_order() == []
     assert small_tree.dfs_post_order() == [2, 3, 1]
